@@ -23,7 +23,8 @@ lastupdated: "2017-06-16"
 To make an SSL connection, you need to obtain the SSL Certificate for the server, which you can find ion the *Overview* page of your {{site.data.keyword.composeForEtcd}} service.
 
 The certificate is shown as a text block. Copy the whole block of text and paste it to a local file to create your SSL certificate file.
-<div class="callout-info"><h3>undefined</h3><p>Note that in the following examples, we have called that file `servercert.crt`</p></div>
+
+**Note:** In the following examples, we have called that file `servercert.crt`.
 
 ## Command line utilities - curl and etcdctl
 
