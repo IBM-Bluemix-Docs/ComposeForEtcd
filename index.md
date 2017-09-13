@@ -27,9 +27,9 @@ When you create an instance of the service, ensure that you choose both a name f
 
 When you provision your {{site.data.keyword.composeForEtcd}} instance you can choose the *Standard* or *Enterprise* plans. With the *Enterprise* plan, you can provision your {{site.data.keyword.composeForEtcd}} instance into an available {{site.data.keyword.composeEnterprise}} cluster. {{site.data.keyword.composeEnterprise}} provides the security and isolation required by enterprise compliance and uses dedicated networking to ensure the performance of the deployed databases. See the [Compose Enterprise documentation](../ComposeEnterprise/index.html) for more details.
 
-## Managing Compose for PostgreSQL
+## Managing Compose for Etcd
 
-You can manage your service from the service dashboard. Here you can find information about your Bluemix Compose database and how to connect to it. You can also manage your backups from the dashboard. For more information, see [Dashboard Overview](./dashboard-overview.html) and [Backups](./managing-backups.html).
+You can manage your service from the service dashboard. Here you can find information about your Bluemix Compose database and how to connect to it. You can also manage your backups from the dashboard and allocated more resources for your service. For more information, see [Service Overview](./dashboard-overview.html), [Backups](./dashboard-backups.html), and [Scaling Resources](./dashboard-scaling-resources.html).
 
 ## Connecting to Compose for Etcd
 
