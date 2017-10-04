@@ -23,7 +23,7 @@ Daily backups of your database are automatically scheduled. To view your existin
 1. Navigate to the _Manage_ page of your service Dashboard.
 2. Click **Backups** in the tabs to open the _Backups_ page. A list of available backups is shown:
 
-  ![Available backups](./images/managing-backups.png "A list of available backups.")
+  ![Available backups](./images/etcd-backups-show.png "A list of available backups.")
 
 ## Creating a manual backup
 
