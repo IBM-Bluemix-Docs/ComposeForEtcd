@@ -2,7 +2,7 @@
 
 Copyright:
   Years: 2017
-lastupdated: "2017-10-16"
+lastupdated: "2017-10-23"
 ---
 
 {:new_window: target="_blank"}
@@ -32,10 +32,6 @@ An internal identifier for the service.
 ### Usage
 
 The size of your database and the amount of storage provided by your service plan.
-
-### Scale Resouces
-
-If your service needs additional memory, or you want to reduce the amount of memory allocated to your service, you can do this by scaling resources. See [Scaling Resources](./dashboard-scaling-resources.html) for more details.
 
 
 ## Connection Strings

@@ -29,7 +29,12 @@ When you provision your {{site.data.keyword.composeForEtcd}} instance you can ch
 
 ## Managing Compose for Etcd
 
-You can manage your service from the service dashboard. Here you can find information about your {{site.data.keyword.Bluemix_notm}} Compose database and how to connect to it. You can also manage your backups, allocate more resources for your service, use whitelists to restrict access to your databases, and reset the service password. For more information, see [Service Overview](./dashboard-overview.html), [Backups](./dashboard-backups.html), [Scaling Resources](./dashboard-scaling-resources.html), [Whitelists](./dashboard-whitelists.html), and [Updating the Service Password](./dashboard-update-service-password.html).
+You can manage your service from the service dashboard. Here you can find information about your {{site.data.keyword.Bluemix_notm}} Compose database and how to connect to it. You can also:
+- manage your backups
+- allocate more resources for your service
+- change the service password
+- use whitelists to restrict access to your databases. 
+For more information, see [Settings](./dashboard-settings.html).
 
 ## Connecting to Compose for Etcd
 
