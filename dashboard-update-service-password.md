@@ -26,6 +26,6 @@ The changes take effect when you click on the **Update Password** button. This w
 ## Updating Connected Applications
 Changing the password will invalidate the existing connection string and generate a new one. This will cause a service interruption until connected applications are updated with the new connection string. You will have to do this by suppling the new connection string to your applications.
 
-More information on connecting your applications is in [Connecting a Bluemix Application](./connecting-bluemix-app.html).
+More information on connecting your applications is in [Connecting a {{site.data.keyword.Bluemix_notm}} Application](./connecting-bluemix-app.html).
 and [Connecting an external application](./connecting-external.html).
 
