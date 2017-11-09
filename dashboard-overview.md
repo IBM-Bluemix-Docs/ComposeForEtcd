@@ -13,7 +13,7 @@ lastupdated: "2017-10-23"
 
 # Service Overview
 
-The _Overview_ page shows you information about your {{site.data.keyword.Bluemix_notm}} Compose database. The overview includes essential identifying information and current resource usage. You'll also find a section for connection strings that you can use with tools or make use of tools to connect to your database.
+The _Overview_ page shows you information about your {{site.data.keyword.cloud}} Compose database. The overview includes essential identifying information and current resource usage. You'll also find a section for connection strings that you can use with tools or make use of tools to connect to your database.
 
 ## Deployment Details
 
@@ -36,7 +36,7 @@ The size of your database and the amount of storage provided by your service pla
 
 ## Connection Strings
 
-Connection Strings can be used by some client libraries and contain all the information needed for other libraries to connect. You can find out how to use a Connection String to connect to {{site.data.keyword.composeForEtcd}} in [Connecting an external application](./connecting-external.html).
+Connection Strings can be used by some client libraries and contain all the information needed for other libraries to connect. You can find out how to use a Connection String to connect to {{site.data.keyword.composeForEtcd_full}} in [Connecting an external application](./connecting-external.html).
 
 You'll find each Connection String for your service in a different tab in the _Connection Strings_ panel.
 
@@ -50,4 +50,4 @@ The **Command Line** is a preformatted command which will invoke `etcd` with the
 
 ### SSL Certificate
 
-Your Compose {{site.data.keyword.Bluemix_notm}} service provides you with an SSL certificate that you can use to connect to your database.
+Your Compose {{site.data.keyword.cloud}} service provides you with an SSL certificate that you can use to connect to your database.

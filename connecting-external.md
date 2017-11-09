@@ -16,7 +16,7 @@ lastupdated: "2017-06-16"
 
 # SSL and Compose etcd
 
-{{site.data.keyword.composeForEtcd}} uses self-signed certificates for SSL connections to allow for more precise certificate pinning. This does mean that there are some differences in the parameters you will need to pass to applications compared to common examples in the etcd documentation.
+{{site.data.keyword.composeForEtcd_full}} uses self-signed certificates for SSL connections to allow for more precise certificate pinning. This does mean that there are some differences in the parameters you will need to pass to applications compared to common examples in the etcd documentation.
 
 ## Obtaining the SSL Certificate
 
