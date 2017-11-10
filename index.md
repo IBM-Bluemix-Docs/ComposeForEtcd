@@ -21,7 +21,7 @@ etcd is a key-value store that holds the always-correct data that you need to co
 
 ## Creating a Compose for Etcd service instance
 
-[Create a {{site.data.keyword.composeForEtcd_full}} instance](https://console.ng.bluemix.net/catalog/services/compose-for-etcd/).
+[Create a {{site.data.keyword.composeForEtcd}} instance](https://console.ng.bluemix.net/catalog/services/compose-for-etcd/).
 
 When you create an instance of the service, ensure that you choose both a name for your service and a credential name. Leave the service unbound; you can connect an application to your service later by using the credentials that are provided when the service is provisioned. The various credential values are listed in the *Available credentials* section.
 
