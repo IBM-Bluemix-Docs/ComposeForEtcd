@@ -6,11 +6,17 @@ Compose For etcd
 
 	{: .navgroup id="learn"}
 	index.md
-	credentials.md
 
-	{: .topicgroup }
-	Zugehörige Links
-		[Node.js-Beispielapp](https://github.com/IBM-Bluemix/compose-etcd-helloworld-nodejs)
-		[Compose - Hilfe](https://help.compose.com)
-		[Compose - Artikel](https://www.compose.com/articles/)
+	{: .topicgroup}
+	Service-Dashboard
+		dashboard-overview.md
+		dashboard-backups.md
+		dashboard-settings.md
+	{: .navgroup-end}
+
+	{: .navgroup id="howto"}
+	{: .topicgroup}
+	Verbindung zu Compose for Etcd herstellen
+		connecting-bluemix-app.md
+		connecting-external.md
 	{: .navgroup-end}
