@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2016,2017
+  years: 2016,2018
 lastupdated: "2017-09-21"
 ---
 
@@ -17,14 +17,14 @@ lastupdated: "2017-09-21"
 
 ## 使用“Hello World”样本应用程序进行连接
 
-[compose-etcd-helloworld-nodejs](https://github.com/IBM-Bluemix/compose-etcd-helloworld-nodejs) 样本应用程序演示如何使用 Node.js，通过提供的凭证连接到 {{site.data.keyword.composeForEtcd}} 服务。应用程序创建、读取和写入数据库
+[compose-etcd-helloworld-nodejs](https://github.com/IBM-Cloud/compose-etcd-helloworld-nodejs) 样本应用程序演示如何使用 Node.js，通过提供的凭证连接到 {{site.data.keyword.composeForEtcd}} 服务。应用程序创建、读取和写入数据库
 
 下载样本应用程序，并遵循自述文件中的指示信息。然后，在 {{site.data.keyword.cloud}} 中的应用程序详细信息页面中，单击**查看应用程序**，以查看*示例*表的内容。
 
 ## 可用凭证
 {: #available-credentials}
 
-要将应用程序连接到服务，请使用随服务一起创建的凭证。[compose-etcd-helloworld-nodejs](https://github.com/IBM-Bluemix/compose-etcd-helloworld-nodejs) 样本应用程序会示范如何使用 Node.js 连接到使用凭证的 {{site.data.keyword.composeForEtcd}} 服务。
+要将应用程序连接到服务，请使用随服务一起创建的凭证。[compose-etcd-helloworld-nodejs](https://github.com/IBM-Cloud/compose-etcd-helloworld-nodejs) 样本应用程序会示范如何使用 Node.js 连接到使用凭证的 {{site.data.keyword.composeForEtcd}} 服务。
 
 |字段名称|描述|
 |----------|-----------|

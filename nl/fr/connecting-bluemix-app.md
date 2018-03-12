@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2016,2017
+  years: 2016,2018
 lastupdated: "2017-09-21"
 ---
 
@@ -17,14 +17,14 @@ Pour connecter une application {{site.data.keyword.cloud}} à votre service, uti
 
 ## Connexion à l'aide du modèle d'application 'Hello World'
 
-Le modèle d'application [compose-etcd-helloworld-nodejs](https://github.com/IBM-Bluemix/compose-etcd-helloworld-nodejs) montre comment utiliser Node.js pour établir une connexion à un service {{site.data.keyword.composeForEtcd}} à l'aide des données d'identification fournies. L'application crée une base de données, y lit et y écrit.
+Le modèle d'application [compose-etcd-helloworld-nodejs](https://github.com/IBM-Cloud/compose-etcd-helloworld-nodejs) montre comment utiliser Node.js pour établir une connexion à un service {{site.data.keyword.composeForEtcd}} à l'aide des données d'identification fournies. L'application crée une base de données, y lit et y écrit.
 
 Téléchargez le modèle d'application et suivez les instructions contenues dans le fichier Readme. Ensuite, sur la page des détails d'application d'{{site.data.keyword.cloud}}, cliquez sur **Afficher l'application** pour afficher le contenu du tableau *Exemples*.
 
 ## Données d'identification disponibles
 {: #available-credentials}
 
-Pour connecter une application à votre service, utilisez les données d'identification créées en même temps que le service. Le modèle d'application [compose-etcd-helloworld-nodejs](https://github.com/IBM-Bluemix/compose-etcd-helloworld-nodejs) montre comment utiliser Node.js pour établir une connexion à un service {{site.data.keyword.composeForEtcd}} à l'aide des données d'identification.
+Pour connecter une application à votre service, utilisez les données d'identification créées en même temps que le service. Le modèle d'application [compose-etcd-helloworld-nodejs](https://github.com/IBM-Cloud/compose-etcd-helloworld-nodejs) montre comment utiliser Node.js pour établir une connexion à un service {{site.data.keyword.composeForEtcd}} à l'aide des données d'identification.
 
 |Nom de zone|Description|
 |----------|-----------|

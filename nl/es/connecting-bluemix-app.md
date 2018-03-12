@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2016,2017
+  years: 2016,2018
 lastupdated: "2017-09-21"
 ---
 
@@ -17,14 +17,14 @@ Para conectar una aplicación {{site.data.keyword.cloud}} al servicio, utilice l
 
 ## Conexión mediante la app de ejemplo 'Hello World'
 
-La app de ejemplo [compose-etcd-helloworld-nodejs](https://github.com/IBM-Bluemix/compose-etcd-helloworld-nodejs) muestra cómo utilizar Node.js para conectar a un servicio de {{site.data.keyword.composeForEtcd}} utilizando las credenciales proporcionada. La aplicación crea, lee y escribe en una base de datos.
+La app de ejemplo [compose-etcd-helloworld-nodejs](https://github.com/IBM-Cloud/compose-etcd-helloworld-nodejs) muestra cómo utilizar Node.js para conectar a un servicio de {{site.data.keyword.composeForEtcd}} utilizando las credenciales proporcionada. La aplicación crea, lee y escribe en una base de datos.
 
 Descargue la app de ejemplo y siga las instrucciones del archivo readme. A continuación, en la página de detalles de la aplicación de {{site.data.keyword.cloud}}, pulse **Ver APP** para ver el contenido de la tabla *ejemplos*.
 
 ## Credenciales disponibles
 {: #available-credentials}
 
-Para conectar una app al servicio, utilice las credenciales creadas junto con el servicio. La app de ejemplo [compose-etcd-helloworld-nodejs](https://github.com/IBM-Bluemix/compose-etcd-helloworld-nodejs) muestra cómo utilizar Node.js para conectar a un servicio de {{site.data.keyword.composeForEtcd}} utilizando las credenciales.
+Para conectar una app al servicio, utilice las credenciales creadas junto con el servicio. La app de ejemplo [compose-etcd-helloworld-nodejs](https://github.com/IBM-Cloud/compose-etcd-helloworld-nodejs) muestra cómo utilizar Node.js para conectar a un servicio de {{site.data.keyword.composeForEtcd}} utilizando las credenciales.
 
 |Nombre de campo|Descripción|
 |----------|-----------|

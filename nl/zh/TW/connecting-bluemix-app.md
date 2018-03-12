@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2016,2017
+  years: 2016,2018
 lastupdated: "2017-09-21"
 ---
 
@@ -17,14 +17,14 @@ lastupdated: "2017-09-21"
 
 ## 使用 'Hello World' 範例應用程式來連接
 
-[compose-etcd-helloworld-nodejs](https://github.com/IBM-Bluemix/compose-etcd-helloworld-nodejs) 範例應用程式會示範如何使用 Node.js，利用所提供的認證來連接至 {{site.data.keyword.composeForEtcd}} 服務。應用程式會建立、讀取及寫入資料庫。
+[compose-etcd-helloworld-nodejs](https://github.com/IBM-Cloud/compose-etcd-helloworld-nodejs) 範例應用程式會示範如何使用 Node.js，利用所提供的認證來連接至 {{site.data.keyword.composeForEtcd}} 服務。應用程式會建立、讀取及寫入資料庫。
 
 請下載範例應用程式，並遵循 Readme 檔中的指示。然後，在 {{site.data.keyword.cloud}} 的應用程式詳細資料頁面中，按一下**檢視應用程式**來檢視*範例* 表格的內容。
 
 ## 可用的認證
 {: #available-credentials}
 
-若要將應用程式連接至服務，請使用與服務一起建立的認證。[compose-etcd-helloworld-nodejs](https://github.com/IBM-Bluemix/compose-etcd-helloworld-nodejs) 範例應用程式會示範如何使用 Node.js，利用認證來連接至 {{site.data.keyword.composeForEtcd}} 服務。
+若要將應用程式連接至服務，請使用與服務一起建立的認證。[compose-etcd-helloworld-nodejs](https://github.com/IBM-Cloud/compose-etcd-helloworld-nodejs) 範例應用程式會示範如何使用 Node.js，利用認證來連接至 {{site.data.keyword.composeForEtcd}} 服務。
 
 |欄位名稱|說明|
 |----------|-----------|

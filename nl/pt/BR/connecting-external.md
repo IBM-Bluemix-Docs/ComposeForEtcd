@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017,2018
 lastupdated: "2017-06-16"
 ---
 
@@ -28,7 +28,7 @@ O certificado é mostrado como um bloco de texto. Copie o bloco inteiro de texto
 
 ## Utilitários de linha de comandos - curl e etcdctl
 
-Para usar os utilitários de linha de comandos, passe o caminho e o nome do arquivo desse certificado para o utilitário.
+Para usar os utilitários de linha de comandos, passe o caminho e o nome do arquivo desse certificado para o utilitário. 
 Vamos iniciar com `curl`, a maneira mais direta para conversar com o etcd. Simplesmente inclua a opção e o parâmetro `-cacert certificate-filename` em sua linha de comandos para obter o certificado usado:
 
 ```shell

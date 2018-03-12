@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017,2018
 lastupdated: "2017-06-16"
 ---
 
@@ -28,7 +28,8 @@ Das Zertifikat wird als Textblock angezeigt. Kopieren Sie den ganzen Textblock u
 
 ## Befehlszeilendienstprogramme - curl und etcdctl
 
-Übergeben Sie, wenn Sie Befehlszeilendienstprogramme verwenden wollen, den Pfad und Dateinamen dieses Zertifikats an das Dienstprogramm. Beginnen Sie mit `curl`, dem einfachsten Verfahren zur Kommunikation mit etcd. Fügen Sie einfach die Option und den Parameter `-cacert certificate-filename` zu Ihrer Befehlszeile hinzu, damit das Zertifikat verwendbar wird:
+Übergeben Sie, wenn Sie Befehlszeilendienstprogramme verwenden wollen, den Pfad und Dateinamen dieses Zertifikats an das Dienstprogramm. 
+Beginnen Sie mit `curl`, dem einfachsten Verfahren zur Kommunikation mit etcd. Fügen Sie einfach die Option und den Parameter `-cacert certificate-filename` zu Ihrer Befehlszeile hinzu, damit das Zertifikat verwendbar wird:
 
 ```shell
 curl -L https://user:pass@hostname:port/v2/keys/ --cacert ./servercert.crt
@@ -98,7 +99,7 @@ Beachten Sie, dass `peerlist`, `cafile`, `username` und `password` Zeichenfolgen
 		Password:                *password,
 	}
 
-	// And create your client as normal.
+	// And create your client as normal. 
 	etcdclient, err := client.New(cfg)
 ```
 
