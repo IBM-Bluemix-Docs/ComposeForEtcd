@@ -28,9 +28,12 @@ To connect an app to your service, use the credentials that are created along wi
 
 |Field Name|Description|
 |----------|-----------|
-|`ca_certificate_base64`|A self-signed certificate that is used to confirm that an app is connecting to the appropriate server. The certificate is base64-encoded. You must decode the key before using it, as shown in the sample app.|
+|`ca_certificate_base64` `(optional)`|A base64 encoded, self-signed certificate that is used to confirm that an application is connecting to the appropriate server. The certificate is only present on services that have a self-signed instead of a Let's Encrypt certificate. You need to decode the key before you can use it, as shown in the sample application.|
 |`deployment_id`|An internal identifier for the service as created within Compose.|
 |`db_type`|The type of database that is offered by service; in this case `etcd`.|
 |`name`|The database deployment name.|
 |`uri`|The URI to be used when connecting to the service. `uri` includes the schema (`amqps:), admin user name and password, the host name of the server, the port number to connect to, and `vhost` name.|
+|`uri_direct_1`|A secondary URI that can be used when connecting to the service. Formatted as for `uri`.|
 {: caption="Table 1. Compose for etcd credentials" caption-side="top"}
+
+**Note:** Two `haproxy` portals provide access to the etcd service. Both `uri` and `uri_direct_1` can be used to connect. In your applications, switch between `uri` and `uri_direct_1` to manage responses to connection failures.
