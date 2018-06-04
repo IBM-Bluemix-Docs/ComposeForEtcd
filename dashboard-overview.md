@@ -13,7 +13,7 @@ lastupdated: "2018-05-07"
 
 # Service Overview
 
-The _Overview_ page shows you information about your {{site.data.keyword.cloud}} Compose database. The overview includes essential identifying information and current resource usage. You'll also find a section for connection strings that you can use with tools or make use of tools to connect to your database.
+The _Overview_ page shows you information about your {{site.data.keyword.cloud}} Compose database, including essential identifying information and current resource usage. It also includes connection strings that you can use with tools to connect to your database.
 
 ## Deployment Details
 
@@ -62,7 +62,7 @@ You can manage your {{site.data.keyword.composeForEtcd}} service through the {{s
 
 ### Foundation Endpoint
 
-The foundation endpoint is composed of the region the service resides in and the service instance id. It will be at the start of every endpoint.
+The foundation endpoint is composed of the region the service resides in and the service instance ID. It is found at the start of every endpoint.
 
 ### Deployment ID
 

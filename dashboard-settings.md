@@ -16,10 +16,9 @@ lastupdated: "2017-10-23"
 
 These features allow you to adapt your {{site.data.keyword.composeForEtcd_full}} service to better suit your needs and requirements.
 
-
 ## Upgrade Version
 
-If there is a new version of the database available, a drop-down menu appears, allowing you to select which version you would like to upgrade to. Otherwise, your service is on the newest version available, and the panel displays the current version information.
+ If your service is already on the newest version available, the panel displays the current version information. If a new version of the database is available, a drop-down menu appears, allowing you to select a version to upgrade to.
 
 ![The Version panel](./images/etcd-version-show.png "The Version panel")
 
@@ -39,20 +38,20 @@ When the scaling is complete the _Deployment Details_ pane updates to show the c
 
 ## Change Password
 
-You may find it necessary to change the password of your service. You can do so using _Update Password_. 
+You might find it necessary to change the password of your service. You can do so from the _Change Password_ panel. 
 
-A new, randomly generated password will appear, or you can type your own password into the field. To regenerate another password, click on the dice to the right of the field. 
+You can use the randomly generated password that is created for you, or you can type your own password into the field. To regenerate a new random password, click the dice to the right of the field. 
   
 ![Updating the etcd password](./images/etcd-update-password.png "The automatic password generator")
 
-Click **Update Password**. You will be asked to confirm the change. Click **Update Password** in the dialog to confirm the new password, or cancel to cancel the change. The _Deployment Details_ pane will show the progress of the running job.
+Click **Update Password**. You will be asked to confirm the change. Click **Update Password** in the dialog to confirm the new password, or cancel to cancel the change. The _Deployment Details_ pane shows the progress of the running job.
 
 **Note:** Changing the password changes the credentials that you and your services use to connect, and invalidates your service's connection string. It can also result in downtime.
 
 ### Updating Connected Applications
-Changing the password will invalidate the existing connection string and generate a new one. This will cause a service interruption until connected applications are updated with the new connection string. You will have to do this by suppling the new connection string to your applications.
+Changing the password invalidates the existing connection string and generate a new one. This can cause a service interruption until connected applications are updated with the new connection string.
 
-More information on connecting your applications is in [Connecting an {{site.data.keyword.cloud}} Application](./connecting-bluemix-app.html).
+For more information on connecting your applications see [Connecting an {{site.data.keyword.cloud}} Application](./connecting-bluemix-app.html).
 and [Connecting an external application](./connecting-external.html).
 
 
@@ -65,17 +64,17 @@ If you want to restrict access to your databases, you can whitelist specific IP 
 ### IP Addresses
 The *IP* field can take a single complete IPv4 address or IPv6 address with or without a netmask. Without a netmask, incoming connections must come from exactly that IP address. 
 
-Note that although the IP entry allows for IPv6, no Compose deployments are currently available to IPv6 networking and so these addresses cannot be filtered on.
+**Note:** although the IP entry allows for IPv6, no Compose deployments are currently available to IPv6 networking and so these addresses cannot be filtered on.
 
 ### Netmasks
-To allow a connection from a specified range of IP addresses, use a netmask. The IP address must be fully specified when using a netmask. That means entering, for example, 192.168.1.0/24 rather than 192.168.1/24.
+To allow a connection from a specified range of IP addresses, use a netmask. The IP address must be fully specified when using a netmask. That means entering, for example, `192.168.1.0/24` rather than `192.168.1/24`.
 
 ### Description
-The *Description* can be any user-significant text for identifying the whitelist entry - a customer name, project identifier or employee number, for example. The description field is required.
+The *Description* can be any text for identifying the whitelist entry - a customer name, project identifier or employee number, for example. The description field is required.
 
 ### Compose Services
 Whitelist entries are automatically added to Compose's servers to allow them to connect.
 
-### Removal
-To remove an IP address or netmask from the Whitelist, click the *Remove* entry displayed next to it.
+### Removing Whitelisted IP Addresses
+To remove an IP address or netmask from the Whitelist, click *Remove IP* in the corresponding row.
 When all entries on the whitelist are removed, the whitelist will be disabled and all IP addresses will be accepted by the TCP access portals.
