@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016,2018
-lastupdated: "2017-10-16"
+lastupdated: "2018-03-26"
 ---
 
 {:new_window: target="_blank"}
@@ -34,7 +34,11 @@ etcd は、分散サーバー構成管理のためにサーバー・クラスタ
 - サービスに割り振るリソースを増やす
 - サービス・パスワードを変更する
 - ホワイトリストを使用してデータベースへのアクセスを制限する。 
+
 詳しくは、[設定](./dashboard-settings.html)を参照してください。
+
+{{site.data.keyword.composeForEtcd}} は、Cloud Foundry の役割を利用して、サービスへのアクセスを管理します。開発者役割を持つユーザーのみが、サービス・ダッシュボードを表示または使用できます。Cloud Foundry の役割について詳しくは、『[Cloud Foundry アクセス権限](https://console.bluemix.net/docs/iam/cfaccess.html#cfaccess)』および 『[Cloud Foundry のアクセス権限の管理](https://console.bluemix.net/docs/iam/mngcf.html#mngcf)』のページを参照してください。
+{: .tip}
 
 ## {{site.data.keyword.composeForEtcd}} への接続
 
@@ -44,6 +48,6 @@ etcd は、分散サーバー構成管理のためにサーバー・クラスタ
 
 {{site.data.keyword.cloud_notm}} アプリケーションをサービスに接続するには、サービスと一緒に作成された資格情報を使用します。 {{site.data.keyword.composeForEtcd}} サービスに {{site.data.keyword.cloud_notm}} アプリケーションを接続する方法が、[{{site.data.keyword.cloud_notm}} アプリケーションの接続](./connecting-bluemix-app.html)に記載されています。
 
-## {{site.data.keyword.cloud_notm}}
+## {{site.data.keyword.cloud_notm}} 外からの {{site.data.keyword.composeForEtcd}} への接続
 
- 外からの {{site.data.keyword.composeForEtcd}} への接続{{site.data.keyword.cloud_notm}} 外から {{site.data.keyword.composeForEtcd}} に接続する場合は、示された接続ストリングまたはコマンド・ラインを使用できます。 接続方法については、[外部アプリケーションの接続](./connecting-external.html)を参照してください。
+{{site.data.keyword.cloud_notm}} 外から {{site.data.keyword.composeForEtcd}} に接続する場合は、示された接続ストリングまたはコマンド・ラインを使用できます。 接続方法については、[外部アプリケーションの接続](./connecting-external.html)を参照してください。

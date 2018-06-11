@@ -5,8 +5,8 @@
 Compose For etcd
 
 	{: .navgroup id="learn"}
-	index.md
-	getting_started.md
+	index.md 	
+	getting_started.md 	
 	pricing.md
 
 	{: .topicgroup}
