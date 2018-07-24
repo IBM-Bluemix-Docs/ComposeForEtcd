@@ -71,7 +71,7 @@ To restore a backup to a new service instance, follow the steps to view existing
 
 Use the following steps to restore a backup from a running etcd service to a new etcd service using the {{site.data.keyword.cloud_notm}} CLI. 
 
-1. If you need to, [download and install the CLI](https://console.bluemix.net/docs/cli/index.html#overview). 
+1. If you need to, [download and install the CLI](https://console.{DomainName}/docs/cli/index.html#overview). 
 
 2. Find the backup you would like to restore from on the _Backups_ page on your service and copy the backup ID.
 
@@ -82,20 +82,20 @@ Use the following steps to restore a backup from a running etcd service to a new
   ```  
   The response contains a list of all available backups for that service instance. Pick the backup you would like to restore from and copy the backup ID.
 
-3. Log in with the appropriate account and credentials. `bx login` (or `bx login -help` to see all the login options).
+3. Log in with the appropriate account and credentials. `ibmcloud login` (or `ibmcloud login -help` to see all the login options).
 
-4. Switch to your Organization and Space `bx target -o "$YOUR_ORG" -s "YOUR_SPACE"`
+4. Switch to your Organization and Space `ibmcloud target -o "$YOUR_ORG" -s "YOUR_SPACE"`
 
 5. Use the `service create` command to provision a new service. Provide the source service and the specific backup that you are restoring in a JSON object. For example:
 
   ``` 
-  bx service create SERVICE PLAN SERVICE_INSTANCE_NAME -c '{"source_service_instance_id": "$SERVICE_INSTANCE_ID", "backup_id": "$BACKUP_ID" }'
+  ibmcloud service create SERVICE PLAN SERVICE_INSTANCE_NAME -c '{"source_service_instance_id": "$SERVICE_INSTANCE_ID", "backup_id": "$BACKUP_ID" }'
   ```
 
   - For _SERVICE_, enter `compose-for-etcd`
   - _PLAN_ can be either Standard or Enterprise, depending on your environment.
   - _SERVICE\_INSTANCE\_NAME_ is the name of your new service.
-  - For _source\_service\_instance\_id_, enter the service instance ID of the source of the backup; you can obtain this value by running `bx cf service DISPLAY_NAME --guid` where _DISPLAY\_NAME_ is the name of the etcd service the backup is from. 
+  - For _source\_service\_instance\_id_, enter the service instance ID of the source of the backup; you can obtain this value by running `ibmcloud cf service DISPLAY_NAME --guid` where _DISPLAY\_NAME_ is the name of the etcd service the backup is from. 
   
   Enterprise users also need to use the `"cluster_id": "$CLUSTER_ID"` parameter in the JSON object to specify which cluster to deploy to.
   
@@ -104,10 +104,10 @@ Use the following steps to restore a backup from a running etcd service to a new
 Some major version upgrades are not available in the current running deployment. You need to provision a new service that is running the upgraded version, and then migrate your data into the new service, by using a backup. This process is the same a restoring a backup, except you  specify the version you want to upgrade to.
 
 ``` 
-bx service create SERVICE PLAN SERVICE_INSTANCE_NAME -c '{"source_service_instance_id": "$SERVICE_INSTANCE_ID", "backup_id": ""$BACKUP_ID", "db_version":"$VERSION_NUMBER" }'
+ibmcloud service create SERVICE PLAN SERVICE_INSTANCE_NAME -c '{"source_service_instance_id": "$SERVICE_INSTANCE_ID", "backup_id": ""$BACKUP_ID", "db_version":"$VERSION_NUMBER" }'
 ```
 
 For example, to restore an older version of a {{site.data.keyword.composeForEtcd}} service to a new service running etcd 3.2.13, use the following command:
 
 ```
-bx service create compose-for-etcd Standard migrated_etcd -c '{ "source_service_instance_id": "0269e284-dcac-4618-89a7-f79e3f1cea6a", "backup_id":"5a96d8a7e16c090018884566", "db_version":"3.2.13"  }'
+ibmcloud service create compose-for-etcd Standard migrated_etcd -c '{ "source_service_instance_id": "0269e284-dcac-4618-89a7-f79e3f1cea6a", "backup_id":"5a96d8a7e16c090018884566", "db_version":"3.2.13"  }'

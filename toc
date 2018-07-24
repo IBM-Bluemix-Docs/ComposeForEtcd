@@ -22,3 +22,11 @@ Compose For etcd
 		connecting-bluemix-app.md
 		connecting-external.md
 	{: .navgroup-end}
+
+	{: .navgroup id="reference"}
+	reference-versions.md
+	reference-architecture.md
+	reference-connections.md
+	reference-other-offerings.md
+	{: .navgroup-end}
+
