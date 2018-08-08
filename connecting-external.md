@@ -29,7 +29,7 @@ The certificate is shown as a text block. Copy the whole block of text and paste
 ## Command line utilities - curl and etcdctl
 
 To use command line utilities, pass the path and file name of the certificate to the utility. 
-When using `curl`, the rawest way to talk to etcd, you add the option and parameter `-cacert certificate-filename` to your command line to get the certificate used:
+When you are using `curl`, add the option and parameter `-cacert certificate-filename` to your command line to get the certificate used:
 
 ```shell
 curl -L https://user:pass@hostname:port/v2/keys/ --cacert ./servercert.crt

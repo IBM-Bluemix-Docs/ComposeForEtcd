@@ -111,3 +111,5 @@ For example, to restore an older version of a {{site.data.keyword.composeForEtcd
 
 ```
 ibmcloud service create compose-for-etcd Standard migrated_etcd -c '{ "source_service_instance_id": "0269e284-dcac-4618-89a7-f79e3f1cea6a", "backup_id":"5a96d8a7e16c090018884566", "db_version":"3.2.13"  }'
+```
+
