@@ -16,10 +16,10 @@ lastupdated: "2018-06-11"
 
 {{site.data.keyword.composeForEtcd_full}} database connections are managed by 2 HAProxy portals. Each portal has 64 MB of memory.
 
-The two portals allow for applications to maintain connectivity in the event that one of the portals become unreachable. Failover at the client side is the responsibility of the application designer. Some etcd drivers automatically handle multiple connection strings and graceful failover. Unless working with a driver that completely handles failover errors you should take the following steps to handle errors:
+The two portals allow for applications to maintain connectivity if one of the portals becomes unreachable. Failover at the client side is the responsibility of the application designer. Some etcd drivers automatically handle multiple connection strings and graceful failover. Unless you are working with a driver that completely handles failover errors, take the following steps to handle errors.
 
 * Work with a driver that accepts multiple endpoints in its connection configuration.
-* Ensure your application's calls to read from or write to the database react to errors appropriately. You can configure your application to react to errors in different ways, including the following:
+* Ensure your application's calls to read from or write to the database react to errors appropriately. You can configure your application to react to errors in different ways.
   - Log the error and reconnect.
   - Reconnect and retry the operation that caused the error.
   - Queue the failed operation and schedule a reconnection.
@@ -34,12 +34,12 @@ Database connections have a connection limit of 2000 connections per portal. Exc
 
 ## Proxy Timeouts
 
-The HAProxy portals manage the life cycle of connections between the server and client. We detail them here as a reference for driver writers and others who have an interest in the low-level activity of {{site.data.keyword.composeForEtcd}} database connections.
+The HAProxy portals manage the lifecycle of connections between the server and client. We detail them here as a reference for driver writers and others who have an interest in the low-level activity of {{site.data.keyword.composeForEtcd}} database connections.
 
 Setting | Value | Applies
 ----------|-----------|-----------
-client | 1 day | When the client is expect to acknowledge or send data.
-connect | 1m | When a connection is being made between the proxy and the server.
-server | 1 day | When the server is expected to acknowledge or send data.
-check | 1m | As a secondary timeout check when a connection is being made between the proxy and the server.
+`client` | 1 day | When the client is expected to acknowledge or send data.
+`connect` | 1 m | When a connection is being made between the proxy and the server.
+`server` | 1 day | When the server is expected to acknowledge or send data.
+`check` | 1 m | As a secondary timeout check when a connection is being made between the proxy and the server.
 {: caption="Table 1. etcd HAProxy timeouts" caption-side="top"}

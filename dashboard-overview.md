@@ -23,7 +23,7 @@ The _Deployment Details_ panel shows details of your service.
 
 ### Type
 
-The type of database that is offered by the service, and the database version that your service uses. If a more recent database version is available, a notification is displayed, together with a link to the [Upgrade version](/docs/services/ComposeForEtcd/dashboard-settings.html#upgrade-version) section of your service dashboard.
+The type of database that is offered by the service, and the database version that your service uses. If a more recent database version is available, a notification is displayed, and a link to the [Upgrade version](/docs/services/ComposeForEtcd/dashboard-settings.html#upgrade-version) section of your service dashboard.
 
 ### ID
 
@@ -31,7 +31,7 @@ An internal identifier for the service.
 
 ### Usage
 
-The size of your database and the amount of storage provided by your service plan.
+The size of your database and the amount of storage that is provided by your service plan.
 
 ## Current Jobs
 
@@ -39,22 +39,22 @@ Making administrative changes to your service (such as scaling, or taking a manu
 
 ## Connection Strings
 
-Connection Strings can be used by some client libraries and contain all the information needed for other libraries to connect. You can find out how to use a Connection String to connect to {{site.data.keyword.composeForEtcd_full}} in [Connecting an external application](./connecting-external.html).
+Connection Strings can be used by some client libraries and contain all the information that is needed for other libraries to connect. You can find out how to use a Connection String to connect to {{site.data.keyword.composeForEtcd_full}} in [Connecting an external application](./connecting-external.html).
 
-You'll find each Connection String for your service in a different tab in the _Connection Strings_ panel.
+You can find each Connection String for your service in a different tab in the _Connection Strings_ panel.
+{: tip}
 
 ### HTTPS
 
-The **HTTPS** connection string can be used by some client libraries and contains all the information needed for other libraries to connect. You can find out how to use the connection string to connect in [Connecting an external application](./connecting-external.html).
+The **HTTPS** connection string can be used by some client libraries and contains all the information that is needed for other libraries to connect. You can find out how to use the connection string to connect in [Connecting an external application](./connecting-external.html).
 
 ### Command Line
 
-The **Command Line** is a preformatted command which will invoke `etcd` with the correct parameters. To use it, you'll need to have the etcd client tools installed on the local system. You can find out more about how to do this in [Connecting an external application](./connecting-external.html).
+The **Command Line** is a preformatted command that invokes `etcd` with the correct parameters. To use it, you need to have the etcd client tools installed on the local system. For more information, see [Connecting an external application](./connecting-external.html).
 
 ### SSL Certificate
 
 Your Compose {{site.data.keyword.cloud}} service provides you with an SSL certificate that you can use to connect to your database.
-
 
 ## Instance Administration API
 

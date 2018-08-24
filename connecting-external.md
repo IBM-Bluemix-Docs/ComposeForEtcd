@@ -24,7 +24,7 @@ To make an SSL connection, you need to obtain the SSL Certificate for the server
 
 The certificate is shown as a text block. Copy the whole block of text and paste it to a local file to create your SSL certificate file.
 
-**Note:** In the following examples, the file containing the certificateis called `servercert.crt`.
+**Note:** In the following examples, the file containing the certificate is called `servercert.crt`.
 
 ## Command line utilities - curl and etcdctl
 
@@ -43,13 +43,13 @@ etcdctl --ca-file servercert.crt --no-sync --peers https://host1:port1,https://h
 
 ```
 
-The certificate parameter can also be set with the value of an environment variable `ETCDCTL_CA_FILE`. Remember to use an absolute path and filename to point to the certificate when setting the variable.
+The certificate parameter can also be set with the value of an environment variable `ETCDCTL_CA_FILE`. Remember to use an absolute path and file name to point to the certificate when you set the variable.
 
 ## Applications - Go
 
 If you are writing code, then how you pass the certificate information depends on your programming language and driver. 
 
-Here's an extract of code for Go using the etcd Go driver. This example imports the `crypto/tls` and `crypto/x509` packages to handle the SSL certificate and the [CoreOS etcd client for Go](https://godoc.org/github.com/coreos/etcd/client).
+Here's an extract of code for Go that uses the etcd Go driver. This example imports the `crypto/tls` and `crypto/x509` packages to handle the SSL certificate and the [CoreOS etcd client for Go](https://godoc.org/github.com/coreos/etcd/client).
 
 ```go
 import (
