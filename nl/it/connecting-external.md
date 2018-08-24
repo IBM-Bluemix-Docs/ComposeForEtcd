@@ -14,9 +14,9 @@ lastupdated: "2017-06-16"
 # Connessione a un'applicazione esterna
 {: #connecting-external-app}
 
-# SSL e Compose etcd
+## SSL e Compose for Etcd
 
-{{site.data.keyword.composeForEtcd_full}} utilizza i certificati firmati automaticamente per le connessioni SSL per consentire un'associazione certificato più precisa. Questo significa che esistono alcune differenze nei parametri di cui avrai bisogno per trasmettere la applicazioni confrontate agli esempi comuni nella documentazione etcd.
+{{site.data.keyword.composeForEtcd_full}} utilizza i certificati firmati automaticamente per le connessioni SSL per consentire un'associazione certificato più precisa. Questo significa che i parametri che devi passare alle applicazioni sono diversi dagli esempi comuni nella documentazione etcd.
 
 ## Ottenimento del certificato SSL
 
@@ -24,19 +24,19 @@ Per effettuare una connessione SSL, devi ottenere il certificato SSL per il serv
 
 Il certificato viene mostrato come un blocco di testo. Copia l'intero blocco di testo e incollalo in un file locale per creare il tuo file del certificato SSL.
 
-**Nota:** nei seguenti esempi, abbiamo richiamato quel file `servercert.crt`.
+**Nota:** nei seguenti esempi, il file che contiene i certificati è denominato `servercert.crt`.
 
 ## Programmi di utilità della riga di comando - curl e etcdctl
 
-Per utilizzare i programmi di utilità della riga di comando trasmetti il percorso e il nome del file di tale certificato al programma di utilità. 
-Inizia con `curl`, il modo meno elaborato per utilizzare etcd. Aggiungi soltanto l'opzione e il parametro `-cacert certificate-filename` alla tua riga di comando per ottenere il certificato utilizzato:
+Per utilizzare i programmi di utilità della riga di comando, passa il percorso e il nome file del certificato al programma di utilità. 
+Quando stai utilizzando `curl`, aggiungi soltanto l'opzione e il parametro `-cacert certificate-filename` alla tua riga di comando per ottenere il certificato utilizzato:
 
 ```shell
 curl -L https://user:pass@hostname:port/v2/keys/ --cacert ./servercert.crt
 
 ```
 
-Il comando `etcdctl`, che fornisce un modo più centrato con etcd per controllare il sistema ha un'opzione e un parametro simili ma differenti in `--ca-file certificate-filename` che dovrebbero emettere un comando simile a:
+Il comando `etcdctl` fornisce un modo maggiormente basato su etcd per controllare il sistema. Ha un'opzione e un parametro simili, ma differenti, in `--ca-file certificate-filename`.
 
 ```shell
 etcdctl --ca-file servercert.crt --no-sync --peers https://host1:port1,https://host2:post2 -u user:pass ls /
@@ -47,9 +47,9 @@ Il parametro del certificato può essere impostato con il valore di una variabil
 
 ## Applicazioni - Go
 
-Se stai scrivendo il codice, come trasmetti le informazioni sul certificato dipenderà dal tuo linguaggio e driver. 
+Se stai scrivendo il codice, il modo in cui passi le informazioni sul certificato dipende dal tuo linguaggio di programmazione e dal tuo driver. 
 
-Questo è un estratto di codice per l'utilizzo di Go e il driver Go etcd. In questo esempio importiamo i pacchetti `crypto/tls` e `crypto/x509` per gestire il certificato SSL e [CoreOS etcd client for Go](https://godoc.org/github.com/coreos/etcd/client) in questo modo:
+Questo è un estratto di codice per l'utilizzo di Go e il driver Go etcd. Questo esempio importa i pacchetti `crypto/tls` e `crypto/x509` per gestire il certificato SSL e il [client etcd CoreOS per Go](https://godoc.org/github.com/coreos/etcd/client).
 
 ```go
 import (
@@ -63,9 +63,10 @@ import (
 )
 ```
 
-Il prossimo blocco di codice esegue la connessione effettiva. Il codice legge il file del certificato e lo aggiunge a un pool di certificati. Quindi aggiunge tutto a una struttura `tls.Config` come il certificato CA root, crea un trasporto HTTP e lo utilizza per avviare la connessione client etcd.
+Il prossimo blocco di codice esegue la connessione effettiva. Il codice legge il file del certificato e lo aggiunge a un pool di certificati. Ne esegue quindi l'aggiunta a una struttura `tls.Config` come il certificato CA root, crea un trasporto HTTP e lo utilizza per avviare la connessione client etcd.
 
-Tieni presente che `peerlist`, `cafile`, `username` e `password` che vengono trasmesse dalla riga di comando.
+**Nota:** nell'esempio di codice, `peerlist`, `cafile`, `username` e `password` sono stringhe che vengono passate dalla riga di comando.
+
 
 ```go
   peers := strings.Split(*peerlist, ",")
@@ -103,4 +104,4 @@ Tieni presente che `peerlist`, `cafile`, `username` e `password` che vengono tra
 	etcdclient, err := client.New(cfg)
 ```
 
-Un esempio completo di utilizzo di questo codice è disponibile in [examplco3 repository](https://github.com/compose-ex/examplco3).
+Un esempio completo che utilizza questo codice è disponibile nel [repository examplco3](https://github.com/compose-ex/examplco3).

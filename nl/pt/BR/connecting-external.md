@@ -14,9 +14,9 @@ lastupdated: "2017-06-16"
 # Conectando um aplicativo externo
 {: #connecting-external-app}
 
-# SSL e Compose etcd
+## SSL e Compose para Etcd
 
-O {{site.data.keyword.composeForEtcd_full}} usa certificados autoassinados para conexões SSL para permitir uma fixação mais precisa de certificado. Isso significa que existem algumas diferenças nos parâmetros que você precisará passar para aplicativos em comparação com exemplos comuns na documentação do etcd.
+O {{site.data.keyword.composeForEtcd_full}} usa certificados autoassinados para conexões SSL para permitir uma fixação mais precisa de certificado. Isso significa que os parâmetros que você precisa passar para os aplicativos são diferentes de exemplos comuns na documentação do etcd.
 
 ## Obtendo o certificado SSL
 
@@ -24,19 +24,19 @@ Para fazer uma conexão SSL, você precisa obter o Certificado SSL para o servid
 
 O certificado é mostrado como um bloco de texto. Copie o bloco inteiro de texto e cole-o em um arquivo local para criar seu arquivo de certificado SSL.
 
-**Nota:** nos exemplos a seguir, chamamos esse arquivo de `servercert.crt`.
+**Nota:** nos exemplos a seguir, o arquivo que contém o certificado é chamado de `servercert.crt`.
 
 ## Utilitários de linha de comandos - curl e etcdctl
 
-Para usar os utilitários de linha de comandos, passe o caminho e o nome do arquivo desse certificado para o utilitário. 
-Vamos iniciar com `curl`, a maneira mais direta para conversar com o etcd. Simplesmente inclua a opção e o parâmetro `-cacert certificate-filename` em sua linha de comandos para obter o certificado usado:
+Para usar os utilitários de linha de comandos, passe o caminho e o nome do arquivo do certificado para o utilitário. 
+Quando você está usando `curl`, inclua a opção e o parâmetro `-cacert certificate-filename` em sua linha de comandos para obter o certificado usado:
 
 ```shell
 curl -L https://user:pass@hostname:port/v2/keys/ --cacert ./servercert.crt
 
 ```
 
-O comando `etcdctl`, que fornece uma maneira mais centralizada no etcd para controlar o sistema, tem uma opção e um parâmetro semelhantes, porém diferentes, em `--ca-file certificate-filename` que forneceriam um comando como:
+O comando `etcdctl` fornece uma maneira mais centrada no etcd para controlar o sistema. Ele tem uma opção e um parâmetro semelhantes, mas diferentes, em `--ca-file certificate-filename`.
 
 ```shell
 etcdctl --ca-file servercert.crt --no-sync --peers https://host1:port1,https://host2:post2 -u user:pass ls /
@@ -47,9 +47,9 @@ O parâmetro de certificado também pode ser configurado com o valor de uma vari
 
 ## Aplicativos- Go
 
-Se você estiver gravando código, a maneira como passa as informações de certificado dependerão de sua linguagem e driver. 
+Se você estiver gravando código, a forma de passar as informações de certificado dependerá de sua linguagem de programação e do driver. 
 
-Aqui está uma extração de código para Go usando o driver etcd Go. Neste exemplo, você importa os pacotes `crypto/tls` e `crypto/x509` para manipular o certificado SSL e o [cliente CoreOS etcd para Go](https://godoc.org/github.com/coreos/etcd/client) assim:
+Aqui está uma extração de código para Go usando o driver etcd Go. Este exemplo importa os pacotes `crypto/tls` e `crypto/x509` para manipular o certificado SSL e o [cliente CoreOS etcd para o Go](https://godoc.org/github.com/coreos/etcd/client).
 
 ```go
 import (
@@ -63,9 +63,10 @@ import (
 )
 ```
 
-O próximo bloco de código executa a conexão real. O código lê o arquivo de certificado e o inclui em um conjunto de certificado. Em seguida, ele inclui isso em uma estrutura `tls.Config` como o certificado de CA raiz, cria um transporte HTTP e usa esse transporte para iniciar a conexão do cliente etcd.
+O próximo bloco de código executa a conexão real. O código lê o arquivo de certificado e o inclui em um conjunto de certificado. Em seguida, ele inclui isso em uma estrutura `tls.Config` como o certificado de autoridade de certificação raiz, cria um transporte HTTP e utiliza-o para iniciar a conexão do cliente etcd.
 
-Observe que `peerlist`, `cafile`, `username` e `password` são sequências sendo passadas da linha de comandos.
+**Nota:** no exemplo de código, `peerlist`, `cafile`, `username` e `password` são sequências passadas por meio da linha de comandos.
+
 
 ```go
   peers := strings.Split(*peerlist, ",")
@@ -103,4 +104,4 @@ Observe que `peerlist`, `cafile`, `username` e `password` são sequências sendo
 	etcdclient, err := client.New(cfg)
 ```
 
-Um exemplo integral usando esse código está disponível no [Repositório examplco3](https://github.com/compose-ex/examplco3).
+Um exemplo completo que usa esse código está disponível no [repositório examplco3](https://github.com/compose-ex/examplco3).

@@ -14,9 +14,9 @@ lastupdated: "2017-06-16"
 # Connexion d'une application externe
 {: #connecting-external-app}
 
-# SSL et Compose etcd
+## SSL et Compose pour Etcd
 
-{{site.data.keyword.composeForEtcd_full}} utilise des certificats autosignés pour les connexions SSL afin de permettre un épinglage plus précis des certificats. Cela implique certaines différences au niveau des paramètres que vous devrez transmettre aux applications par rapport aux exemples classiques de la documentation etcd.
+{{site.data.keyword.composeForEtcd_full}} utilise des certificats autosignés pour les connexions SSL afin de permettre un épinglage plus précis des certificats. Cela signifie que les paramètres que vous devez transmettre aux applications sont différents de ceux des exemples fournis dans la documentation etcd.
 
 ## Obtention du certificat SSL
 
@@ -24,19 +24,19 @@ Pour établir une connexion SSL, vous avez besoin d'un certificat SSL pour le se
 
 Le certificat se présente comme un bloc de texte. Copiez l'intégralité du bloc et collez-le dans un fichier local pour créer votre fichier de certificat SSL.
 
-**Remarque :** Dans les exemples suivants, ce fichier se nomme `servercert.crt`.
+**Remarque :** dans les exemples suivants, le fichier qui contient les certificats se nomme `servercert.crt`.
 
 ## Utilitaires de ligne de commande - curl et etcdctl
 
-Pour utiliser les utilitaires de ligne de commande, transmettez le chemin et le nom de fichier de ce certificat aux utilitaires. 
-Commençons avec `curl`, le moyen le plus simple de communiquer avec etcd. Ajoutez simplement l'option et le paramètre `-cacert certificate-filename` à votre ligne de commande pour obtenir le certificat utilisé :
+Pour utiliser des utilitaires de ligne de commande, transmettez le chemin d'accès et le nom de fichier du certificat à l'utilitaire. 
+Lorsque vous utilisez `curl`, ajoutez l'option et le paramètre `-cacert certificate-filename` à votre ligne de commande pour obtenir le certificat utilisé :
 
 ```shell
 curl -L https://user:pass@hostname:port/v2/keys/ --cacert ./servercert.crt
 
 ```
 
-La commande `etcdctl`, qui fournit une méthode plus axée sur etcd de contrôle du système, propose une option et un paramètre similaires, bien que différents, dans `--ca-file certificate-filename` qui donne une comme du type :
+La commande `etcdctl` offre un moyen plus orienté etcd de contrôler le système. Elle propose une option et un paramètre similaires mais différents dans `--ca-file certificate-filename`.
 
 ```shell
 etcdctl --ca-file servercert.crt --no-sync --peers https://host1:port1,https://host2:post2 -u user:pass ls /
@@ -47,9 +47,9 @@ Le paramètre de certificat peut également être défini avec la valeur d'une v
 
 ## Applications - Go
 
-Lorsque vous écrivez du code, la manière de transmettre les informations de certificat dépendra du langage et du pilote utilisé. 
+Lorsque vous écrivez du code, la manière de transmettre les informations de certificat dépend du langage de programmation et du pilote utilisés. 
 
-Voici un extrait de code pour Go qui utilise le pilote Go etcd. Dans cet exemple, nous importons les pacakges `crypto/tls` et `crypto/x509` pour gérer le certificat SSL et le [client CoreOS etcd pour Go](https://godoc.org/github.com/coreos/etcd/client) comme suit :
+Voici un extrait de code pour Go qui utilise le pilote Go etcd. Cet exemple importe les packages `crypto/tls` et `crypto/x509` pour gérer le certificat SSL et le [client CoreOS etcd pour Go](https://godoc.org/github.com/coreos/etcd/client).
 
 ```go
 import (
@@ -65,7 +65,8 @@ import (
 
 Le bloc de code suivant effectue la connexion effective. Le code lit le fichier certificat et l'ajoute à un pool de certificats. Ensuite, il ajoute cet élément à une structure `tls.Config` en tant que certificat d'autorité de certification racine, crée un transport HTTP et utilise ce transport pour démarrer la connexion client etcd.
 
-Notez les `peerlist`, `cafile`, `username` et `password` transmises depuis la ligne de commande.
+**Remarque :** dans l'exemple de code, `peerlist`, `cafile`, `username` et `password` sont des chaînes transmises à partir de la ligne de commande.
+
 
 ```go
   peers := strings.Split(*peerlist, ",")

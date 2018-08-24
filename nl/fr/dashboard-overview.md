@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2017,2018
-lastupdated: "2017-11-15"
+lastupdated: "2018-05-07"
 ---
 
 {:new_window: target="_blank"}
@@ -13,7 +13,7 @@ lastupdated: "2017-11-15"
 
 # Présentation du service
 
-La page _Vue d'ensemble_ affiche des informations concernant la base de données Compose d'{{site.data.keyword.cloud}}. La vue d'ensemble contient des informations d'identification essentielles et indique l'utilisation actuelle des ressources. Vous y trouverez également une section qui contient les chaînes de connexion que vous pouvez utiliser avec les outils pour vous connecter à votre base de données.
+La page _Vue d'ensemble_ affiche des informations concernant la base de données Compose d'{{site.data.keyword.cloud}}, y compris des informations essentielles d'identification et d'utilisation en cours des ressources. Elle contient également des chaînes de connexion que vous pouvez utiliser avec des outils pour vous connecter à votre base de données.
 
 ## Deployment Details
 
@@ -25,7 +25,7 @@ Le panneau _Deployment Details_ affiche des détails concernant votre déploieme
 
 Type de base de données fourni par le service et version de base de données qu'utilise votre service. Lorsqu'une version plus récente de la base de données est disponible, une notification s'affiche, accompagnée d'un lien vers la section [Mise à niveau de la version](/docs/services/ComposeForEtcd/dashboard-settings.html#upgrade-version) du tableau de bord de votre service.
 
-### Nom
+### ID
 
 Identificateur interne du service.
 
@@ -62,7 +62,7 @@ Vous pouvez gérer votre service {{site.data.keyword.composeForEtcd}} via l'API 
 
 ### Noeud final Foundation
 
-Le noeud final Foundation est composé de la région où réside le service et de l'ID d'instance du service. Il se trouvera au début de chaque noeud final.
+Le noeud final Foundation est composé de la région où réside le service et de l'ID d'instance du service. Il se trouve au début de chaque noeud final.
 
 ### ID de déploiement
 

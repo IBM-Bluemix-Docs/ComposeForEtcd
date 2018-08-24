@@ -16,10 +16,9 @@ lastupdated: "2017-10-23"
 
 Ces fonctions vous permettent d'adapter votre service {{site.data.keyword.composeForEtcd_full}} de sorte qu'il réponde mieux à vos besoins et exigences.
 
-
 ## Mise à niveau de la version
 
-Lorsqu'une nouvelle version de la base de données est disponible, un menu déroulant s'affiche. Il vous permet de sélectionner la version vers laquelle vous voulez effectuer une mise à niveau. Si votre service est à la version la plus récente disponible, le panneau affiche les informations relatives à cette version.
+ Si votre service est déjà à la version la plus récente disponible, le panneau affiche les informations relatives à cette version. Lorsqu'une nouvelle version de la base de données est disponible, un menu déroulant s'affiche. Il vous permet de sélectionner la version vers laquelle effectuer une mise à niveau.
 
 ![Panneau Version](./images/etcd-version-show.png "Panneau Version")
 
@@ -39,9 +38,9 @@ Une fois la mise à l'échelle terminée, le panneau _Deployment Details_ est ac
 
 ## Modification du mot de passe
 
-Il peut s'avérer nécessaire de modifier le mot de passe de votre service. La fonction _Mettre à jour le mot de passe_ permet d'effectuer cette modification. 
+Il peut s'avérer nécessaire de modifier le mot de passe de votre service. Le panneau _Modification du mot de passe_ vous permet d'effectuer cette opération. 
 
-Un nouveau mot de passe aléatoire est généré ou vous pouvez entrer votre propre mot de passe dans la zone. Pour générer un autre mot de passe, cliquez sur le dé à jouer en regard de la zone. 
+Vous pouvez utiliser le mot de passe créé pour vous de manière aléatoire ou entrer votre propre mot de passe dans la zone. Pour générer un nouveau mot de passe, cliquez sur le dé à jouer en regard de la zone. 
   
 ![Mise à jour du mot de passe etcd](./images/etcd-update-password.png "Générateur de mot de passe automatique")
 
@@ -50,9 +49,9 @@ Cliquez sur **Mise à jour du mot de passe**. Un message vous demande de confirm
 **Remarque :** Cette opération modifie les données d'identification que vous utilisez ainsi que vos services pour vous connecter et invalide la chaîne de connexion de votre service. Elle peut également entraîner un temps d'indisponibilité.
 
 ### Mise à jour des applications connectées
-La modification du mot de passe invalide la chaîne de connexion existante et en génère une nouvelle. Cela provoque une interruption du service jusqu'à ce que les applications connectées soient mises à jour avec la nouvelle chaîne de connexion. Vous devrez effectuer cette opération en fournissant la nouvelle chaîne de connexion à toutes vos applications.
+La modification du mot de passe invalide la chaîne de connexion existante et en génère une nouvelle. Cela provoque une interruption du service jusqu'à ce que les applications connectées soient mises à jour avec la nouvelle chaîne de connexion.
 
-Vous trouverez plus d'informations sur la connexion de vos applications dans [Connexion d'une {{site.data.keyword.cloud}} application](./connecting-bluemix-app.html)
+Vous trouverez plus d'informations sur la connexion de vos applications, voir [Connexion d'une application {{site.data.keyword.cloud}}](./connecting-bluemix-app.html).
 et [Connexion d'une application externe](./connecting-external.html).
 
 
@@ -65,17 +64,17 @@ Si vous voulez limiter l'accès à vos bases de données, vous pouvez constituer
 ### Adresses IP
 La zone *IP* accepte une adresse IPv4 ou IPv6 complète, avec ou sans masque de réseau. Sans masque de réseau, les connexions entrantes doivent provenir très exactement de cette adresse IP. 
 
-Même si la zone IP accepte les adresses IPv6, aucun déploiement Compose n'est actuellement disponible pour un réseau IPv6 de sorte que ces adresses ne peuvent pas être filtrées.
+**Remarque :** même si la zone IP accepte les adresses IPv6, aucun déploiement Compose n'est actuellement disponible pour un réseau IPv6 de sorte que ces adresses ne peuvent pas être filtrées.
 
 ### Masques de réseau
-Pour autoriser une connexion à partir d'une plage spécifiée d'adresses IP, utilisez un masque de réseau. L'adresse IP doit être intégralement spécifiée lorsque vous utilisez un masque de réseau. Cela signifie que vous devez, par exemple, entrer 192.168.1.0/24 plutôt que 192.168.1/24.
+Pour autoriser une connexion à partir d'une plage spécifiée d'adresses IP, utilisez un masque de réseau. L'adresse IP doit être intégralement spécifiée lorsque vous utilisez un masque de réseau. Cela signifie que vous devez, par exemple, entrer `192.168.1.0/24` plutôt que `192.168.1/24`.
 
 ### Description
-La *Description* peut être tout texte significatif pour l'utilisateur lui permettant d'identifier l'entrée de la liste blanche, par exemple, nom de client, identificateur de projet ou matricule. La zone Description est obligatoire.
+La *Description* peut être tout texte permettant d'identifier l'entrée de la liste blanche, par exemple, nom de client, identificateur de projet ou matricule. La zone Description est obligatoire.
 
 ### Services Compose
 Les entrées d'une liste blanche sont automatiquement ajoutées aux serveurs de Compose pour leur permettre de se connecter.
 
-### Suppression
-Pour supprimer une adresse IP ou un masque de réseau de la liste blanche, cliquez sur l'entrée *Retirer* en regard de l'élément à supprimer.
+### Suppression d'adresses IP de la liste blanche
+Pour supprimer une adresse IP ou un masque de réseau de la liste blanche, cliquez sur *Remove IP* sur la ligne correspondante.
 Lorsque toutes les entrées d'une liste blanche ont été supprimées, la liste est désactivée et toutes les adresses IP sont acceptées par les portails d'accès TCP.

@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2017,2018
-lastupdated: "2017-11-15"
+lastupdated: "2018-05-07"
 ---
 
 {:new_window: target="_blank"}
@@ -13,7 +13,7 @@ lastupdated: "2017-11-15"
 
 # Visión general del servicio
 
-La página _Visión general_ muestra información sobre la base de datos de {{site.data.keyword.cloud}} Compose. La visión general incluye información de identificación esencial y el uso actual de recursos. También encontrará una sección correspondiente a las series de conexión que puede utilizar con las herramientas o las herramientas que puede usar para conectarse a la base de datos.
+La página _Visión general_ muestra información sobre la base de datos de {{site.data.keyword.cloud}} Compose, que incluye información de identificación esencial y el uso actual de recursos. También incluye las series de conexión que puede utilizar con herramientas para conectarse a la base de datos.
 
 ## Detalles de despliegue
 
@@ -25,7 +25,7 @@ El panel _Detalles de despliegue_ muestra detalles del servicio.
 
 El tipo de base de datos que ofrece el servicio y la versión de la base de datos que utiliza el servicio. Si hay disponible una versión de base de datos más reciente, se mostrará una notificación, junto con un enlace a la sección [Actualizar versión](/docs/services/ComposeForEtcd/dashboard-settings.html#upgrade-version) del panel de control de servicio.
 
-### Nombre
+### ID
 
 Un identificador interno para el servicio.
 
@@ -62,7 +62,7 @@ Puede gestionar el servicio de {{site.data.keyword.composeForEtcd}} a través de
 
 ### Punto final de la fundación
 
-El punto final de la fundación se compone de la región del servicio en el que reside y el ID de instancia de servicio. Estará al principio de cada punto final.
+El punto final de la fundación se compone de la región del servicio en el que reside y el ID de instancia de servicio. Se encuentra al inicio de cada punto final.
 
 ### ID de despliegue
 

@@ -16,10 +16,9 @@ lastupdated: "2017-10-23"
 
 Queste funzioni ti consentono di adattare il tuo servizio {{site.data.keyword.composeForEtcd_full}} per soddisfare in modo migliore i tuoi bisogni e requisiti.
 
-
 ## Aggiorna versione
 
-Se è disponibile una nuova versione del database, viene visualizzato un menu a discesa, che ti consente di selezionare per quale versione desideri eseguire l'aggiornamento. Altrimenti, il tuo servizio è all'ultima versione disponibile e il pannello visualizza le informazioni sulla versione corrente.
+ Se il tuo servizio è già all'ultima versione disponibile, il pannello visualizza le informazioni sulla versione corrente. Se è disponibile una nuova versione del database, viene visualizzato un menu a discesa che ti consente di selezionare una versione a cui eseguire l'upgrade.
 
 ![Il pannello della versione](./images/etcd-version-show.png "Il pannello della versione")
 
@@ -39,20 +38,20 @@ Quando il ridimensionamento è completo il pannello _Deployment Details_ si aggi
 
 ## Modifica la password
 
-Potresti trovare necessario modificare la password del tuo servizio. Puoi farlo utilizzando _Update Password_. 
+Potresti dover modificare la password del tuo servizio. Puoi eseguire tale operazione dal pannello _Change Password_. 
 
-Sarà visualizzata una nuova password generata casualmente o puoi digitare la tua propria password nel campo. Per rigenerare un'altra password, fai clic su dado alla destra del campo. 
+Puoi utilizzare la password generata casualmente che viene creata per tuo conto oppure puoi immettere una tua password nel campo. Per rigenerare una nuova password casuale, fai clic sul dado a destra del campo. 
   
 ![Aggiornamento della password etcd](./images/etcd-update-password.png "Generatore della password automatico")
 
-Fai clic su **Update Password**. Ti sarà richiesto di confermare la modifica. Fai clic su **Update Password** nella finestra di dialogo per confermare la nuova password o per annullare la modifica. Il pannello _Deployment Details_ visualizzerà il progresso del lavoro in esecuzione.
+Fai clic su **Update Password**. Ti sarà richiesto di confermare la modifica. Fai clic su **Update Password** nella finestra di dialogo per confermare la nuova password o per annullare la modifica. Il pannello _Deployment Details_ visualizza il progresso del lavoro in esecuzione.
 
 **Nota:** modificando la password modifichi le credenziali che tu e i tuoi servizi utilizzate per il collegamento e annulla la validità della stringa di connessione del tuo servizio. Può anche causare un tempo di inattività.
 
-### Aggiornamento delle applicazioni collegate
-La modifica della password renderà non valida la stringa di connessione esistente e ne genererà una nuova. Questo causerà un'interruzione del servizio finché le applicazioni collegate non vengono aggiornate con la nuova stringa di connessione. Dovrai fornire la nuova stringa di connessione alle tue applicazioni.
+### Aggiornamento delle applicazioni connesse
+La modifica della password rende non valida la stringa di connessione esistente e ne genera una nuova. Questo può causare un'interruzione del servizio finché le applicazioni connesse non vengono aggiornate con la nuova stringa di connessione.
 
-Puoi trovare ulteriori informazioni sulla connessione delle tue applicazioni in [Connessione di un'applicazione {{site.data.keyword.cloud}}](./connecting-bluemix-app.html).
+Per ulteriori informazioni sulla connessione delle tue applicazioni, vedi [Connessione di un'applicazione {{site.data.keyword.cloud}}](./connecting-bluemix-app.html).
 e [Connessione di un'applicazione esterna](./connecting-external.html).
 
 
@@ -65,17 +64,17 @@ Se desideri limitare l'accesso ai tuoi database, puoi inserirei in una whitelist
 ### Indirizzi IP
 Il campo *IP* può avere solo un indirizzo IPv4 o IPv6 con o senza una netmask. Senza una netmask, le connessioni in entrata devono provenire esattamente da tale indirizzo IP. 
 
-Tieni presente che anche se la voce IP consente IPv6, nessuna distribuzione Compose è al momento disponibile per la rete IPv6, per cui questi indirizzi non possono essere filtrati.
+**Nota:** anche se la voce IP consente IPv6, nessuna distribuzione Compose è al momento disponibile per la rete IPv6, per cui non è possibile applicare filtri su questi indirizzi.
 
 ### Netmask
-Per consentire una connessione da un intervallo specificato di indirizzi IP, utilizza una netmask. L'indirizzo IP deve essere completamente specificato quando utilizzi una netmask. Questo significa che devi immettere, ad esempio, 192.168.1.0/24 invece di 192.168.1/24.
+Per consentire una connessione da un intervallo specificato di indirizzi IP, utilizza una netmask. L'indirizzo IP deve essere completamente specificato quando utilizzi una netmask. Questo significa che devi immettere, ad esempio, `192.168.1.0/24` invece di `192.168.1/24`.
 
 ### Descrizione
-*Description* può essere un qualsiasi testo significativo per l'utente per identificare la voce della whitelist - ad esempio, un nome del cliente, un identificativo del progetto o un numero del dipendente. Il campo descrizione è obbligatorio.
+*Description* può essere un qualsiasi testo per identificare la voce della whitelist - ad esempio, un nome del cliente, un identificativo del progetto o un numero del dipendente. Il campo della descrizione è obbligatorio.
 
 ### Servizi Compose
 Le voci della whitelist vengono automaticamente aggiunte ai server di Compose per consentire loro di collegarsi.
 
-### Rimozione
-Per rimuovere un indirizzo IP o una netmask dalla whitelist, fai clic sulla voce *Remove* visualizzata al loro fianco.
+### Rimozione degli indirizzi IP inseriti nella whitelist
+Per rimuovere un indirizzo IP o una netmask dalla whitelist, fai clic su *Remove IP* nella riga corrispondente.
 Quando tutte le voci nella whitelist sono state rimosse, sarà disabilitata e tutti gli indirizzi IP saranno accettati dai portali di accesso TCP.

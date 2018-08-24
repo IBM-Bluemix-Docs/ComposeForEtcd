@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2017,2018
-lastupdated: "2017-11-15"
+lastupdated: "2018-05-07"
 ---
 
 {:new_window: target="_blank"}
@@ -13,7 +13,7 @@ lastupdated: "2017-11-15"
 
 # Visão geral do serviço
 
-A página _Visão geral_ mostra informações sobre seu banco de dados do Compose do {{site.data.keyword.cloud}}. A visão geral inclui informações essenciais de identificação e o uso do recurso atual. Você também localizará uma seção para sequências de conexões que podem ser usadas com ferramentas ou fazer uso de ferramentas para se conectar a seu banco de dados.
+A página _Visão geral_ mostra informações sobre o banco de dados do {{site.data.keyword.cloud}} Compose, incluindo informações de identificação essenciais e o uso de recursos atuais. Ela também inclui sequências de conexões que podem ser usadas com ferramentas para se conectar ao banco de dados.
 
 ## Detalhes da implementação
 
@@ -25,7 +25,7 @@ O painel _Detalhes da implementação_ mostra detalhes de seu serviço.
 
 O tipo de banco de dados que é oferecido pelo serviço e a versão do banco de dados que seu serviço usa. Se uma versão de banco de dados mais recente estiver disponível, uma notificação será exibida, junto a um link para a seção [Fazer upgrade da versão](/docs/services/ComposeForEtcd/dashboard-settings.html#upgrade-version) de seu painel de serviço.
 
-### Nome
+### ID
 
 Um identificador interno para o serviço.
 
@@ -62,7 +62,7 @@ Seu serviço Compose {{site.data.keyword.cloud}} fornece um certificado SSL que 
 
 ### Terminal de base
 
-O terminal base é composto pela região na qual o serviço reside e pelo ID da instância de serviço. Ela estará no início de cada terminal.
+O terminal base é composto pela região na qual o serviço reside e pelo ID da instância de serviço. Ele está localizado no início de cada terminal.
 
 ### ID de implementação
 

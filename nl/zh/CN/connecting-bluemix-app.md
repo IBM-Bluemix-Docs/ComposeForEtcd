@@ -28,9 +28,12 @@ lastupdated: "2017-09-21"
 
 |字段名称|描述|
 |----------|-----------|
-|`ca_certificate_base64`|自签名证书，用于确认应用程序连接到相应的服务器。证书是 Base64 编码。您必须先解码密钥，才能对其进行使用，如样本应用程序中所示。|
+|`ca_certificate_base64``（可选）`|Base64 编码的自签名证书，用于确认应用程序连接到的是相应的服务器。在具有 Let's Encrypt 证书的服务上不提供该自签名证书。您需要先将密钥解码，才能加以使用，如样本应用程序中所示。|
 |`deployment_id`|在 Compose 内创建的服务的内部标识。|
 |`db_type`|服务所提供的数据库类型；在本例中为 `etcd`。|
 |`name`|数据库部署名称。|
 |`uri`|连接到服务时要使用的 URI。`uri` 包括模式 (`amqps:)、管理用户名和密码、服务器的主机名、要连接到的端口号和 `vhost` 名称。|
+|`uri_direct_1`|连接到服务时可使用的第二个 URI。格式与 `uri` 一样。|
 {: caption="表 1. Compose for etcd 凭证" caption-side="top"}
+
+**注：**两个 `haproxy` 门户网站提供对 etcd 服务的访问权。`uri` 和 `uri_direct_1` 都可用于连接。在您的应用程序中，在 `uri` 和 `uri_direct_1` 之间进行切换，以管理对连接失败的响应。

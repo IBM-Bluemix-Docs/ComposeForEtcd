@@ -14,9 +14,9 @@ lastupdated: "2017-06-16"
 # 連接外部應用程式
 {: #connecting-external-app}
 
-# SSL 及 Compose for Etcd
+## SSL 及 Compose for Etcd
 
-{{site.data.keyword.composeForEtcd_full}} 使用自簽憑證來進行 SSL 連線，以容許更精準的憑證綁定。這的確表示相較於 Etcd 文件中的一般範例，您需要傳遞至應用程式的參數中有一些差異。
+{{site.data.keyword.composeForEtcd_full}} 使用自簽憑證來進行 SSL 連線，以容許更精準的憑證綁定。這表示您必須傳遞至應用程式的參數與 etcd 文件中的一般範例不同。
 
 ## 取得 SSL 憑證
 
@@ -24,17 +24,17 @@ lastupdated: "2017-06-16"
 
 憑證會顯示為文字區塊。請複製整個文字區塊，並將它貼到本端檔案，以建立 SSL 憑證檔。
 
-**附註：**在下列範例中，我們將該檔案稱為 `servercert.crt`。
+**附註：**在下列範例中，包含憑證的檔案稱為 `servercert.crt`。
 
 ## 指令行公用程式 - curl 及 etcdctl
 
-若要使用指令行公用程式，請將該憑證的路徑及檔名傳遞至公用程式。讓我們從 `curl` 開始，這是與 Etcd 交談的最原始方式。只需將選項及參數 `-cacert certificate-filename` 新增至指令行，即可取得所使用的憑證：
+如果要使用指令行公用程式，請將憑證的路徑和檔名傳遞給公用程式。當您使用 `curl` 時，將選項及參數 `-cacert certificate-filename` 新增至指令行，即可取得所使用的憑證：
 
 ```shell
 curl -L https://user:pass@hostname:port/v2/keys/ --cacert ./servercert.crt
 ```
 
-`etcdctl` 指令提供其他以 Etcd 為中心的方式來控制系統，而且在提供如下指令的 `--ca-file certificate-filename` 中具有類似但不同的選項及參數：
+`etcdctl` 指令提供更加以 etcd 為中心的方式來控制系統。它在 `--ca-file certificate-filename` 中具有類似但不同的選項及參數。
 
 ```shell
 etcdctl --ca-file servercert.crt --no-sync --peers https://host1:port1,https://host2:post2 -u user:pass ls /
@@ -44,9 +44,9 @@ etcdctl --ca-file servercert.crt --no-sync --peers https://host1:port1,https://h
 
 ## 應用程式 - Go
 
-如果您要撰寫程式碼，則傳遞憑證資訊的方式將視您的語言及驅動程式而定。 
+如果您要撰寫程式碼，則傳遞憑證資訊的方式將視您的程式設計語言及驅動程式而定。 
 
-以下摘錄使用 Etcd Go 驅動程式來擷取 Go 的程式碼。在此範例中，我們匯入 `crypto/tls` 及 `crypto/x509` 套件，來處理 SSL 憑證及[適用於 Go 的 CoreOS Etcd 用戶端](https://godoc.org/github.com/coreos/etcd/client)，例如：
+以下摘錄使用 etcd Go 驅動程式來擷取 Go 的程式碼。此範例會匯入 `crypto/tls` 及 `crypto/x509` 套件，來處理 SSL 憑證及[適用於 Go 的 CoreOS etcd 用戶端](https://godoc.org/github.com/coreos/etcd/client)。
 
 ```go
 import (
@@ -60,9 +60,10 @@ import (
 )
 ```
 
-下一個程式碼區塊會執行實際的連線。此程式碼會讀取憑證檔，並將它新增至憑證儲存區。然後，將它新增至 `tls.Config` 結構作為主要 CA 憑證、建立 HTTP 傳輸，並使用該傳輸來啟動 Etcd 用戶端連線。
+下一個程式碼區塊會執行實際的連線。此程式碼會讀取憑證檔，並將它新增至憑證儲存區。然後，將它新增至 `tls.Config` 結構作為主要 CA 憑證、建立 HTTP 傳輸，並使用該傳輸來啟動 etcd 用戶端連線。
 
-請注意，`peerlist`、`cafile`、`username` 及 `password` 是從指令行傳入的字串。
+**附註：**在程式碼範例中，`peerlist`、`cafile`、`username` 和 `password` 是從指令行傳入的字串。
+
 
 ```go
   peers := strings.Split(*peerlist, ",")

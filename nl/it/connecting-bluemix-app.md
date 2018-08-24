@@ -28,9 +28,12 @@ Per collegare un'applicazione al tuo servizio, utilizza le credenziali create in
 
 |Nome campo|Descrizione|
 |----------|-----------|
-|`ca_certificate_base64`|Un certificato auto-firmato che viene utilizzato per confermare che un'applicazione sia collegata al server corretto. Il certificato si basa su codifica base64. Devi decodificare la chiave prima di utilizzarla, come mostrato nell'applicazione di esempio.|
+|`ca_certificate_base64` `(optional)`|Un certificato autofirmato con codifica base64 che viene utilizzato per confermare che un'applicazione sia collegata al server corretto. Il certificato è presente solo sui servizi che hanno un certificato autofirmato invece di un certificato di Let's Encrypt. Devi decodificare la chiave prima di utilizzarla, come mostrato nell'applicazione di esempio.|
 |`deployment_id`|Un identificativo interno per il servizio come creato in Compose.|
 |`db_type`|Il tipo di database offerto dal servizio; in questo caso `etcd`.|
 |`name`|Il nome di distribuzione del database.|
 |`uri`|L'URI da utilizzare durante il collegamento al servizio. `uri` include lo schema (`amqps:), il nome utente e la password amministratore, il nome host del server, il numero di porta a cui collegarsi e il nome `vhost.|
+|`uri_direct_1`|Un URI secondario che può essere utilizzato durante il collegamento al servizio. Formato come l'`uri`.|
 {: caption="Tabella 1. Credenziali di Compose for etcd" caption-side="top"}
+
+**Nota:** due portali `haproxy` forniscono l'accesso al servizio etcd. Possono essere utilizzati sia `uri` che `uri_direct_1` per il collegamento. Nelle tue applicazioni, passa da `uri` a `uri_direct_1` per gestire le risposte agli errori di connessione.

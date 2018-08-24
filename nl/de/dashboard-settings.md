@@ -16,10 +16,9 @@ lastupdated: "2017-10-23"
 
 Mit diesen Funktionen können Sie Ihren {{site.data.keyword.composeForEtcd_full}}-Service besser an Ihre Bedürfnisse und Anforderungen anpassen.
 
-
 ## Upgradeversion
 
-Wenn eine neue Version der Datenbank verfügbar ist, wird ein Dropdown-Menü angezeigt, in dem Sie auswählen können, auf welche Version Sie das Upgrade durchführen wollen. Andernfalls ist Ihr Service auf dem neuesten verfügbaren Stand und die Anzeige zeigt die aktuellen Versionsinformationen an.
+ Wenn sich Ihr Service bereits auf dem neuesten verfügbaren Versionsstand befindet, werden in der Anzeige die aktuellen Versionsinformationen angezeigt. Wenn eine neue Version der Datenbank verfügbar ist, wird ein Dropdown-Menü angezeigt, in dem Sie die Version auswählen können, auf die das Upgrade durchgeführt werden soll.
 
 ![Versionsanzeige](./images/etcd-version-show.png "Versionsanzeige")
 
@@ -38,21 +37,20 @@ Nach dem Abschluss der Skalierung wird die Anzeige _Bereitstellungsdetails_ aktu
 
 ## Kennwort ändern
 
-Möglicherweise finden Sie es erforderlich, das Kennwort Ihres Service zu ändern. Verwenden Sie dazu die Option _Kennwort aktualisieren_. 
+Möglicherweise finden Sie es erforderlich, das Kennwort Ihres Service zu ändern. Eine solche Änderung können Sie im Fenster _Kennwort ändern_ vornehmen. 
 
-Es wird ein neues, zufällig generiertes Kennwort angezeigt. Alternativ können Sie in dem Feld ein eigenes Kennwort eingeben. Klicken Sie zum Erstellen eines anderen Kennworts rechts neben dem Feld auf den Würfel. 
+Sie können das zufällig generierte Kennwort verwenden, das für Sie erstellt wird, oder Sie können ein eigenes Kennwort in das Feld eingeben. Wenn automatisch ein beliebiges neues Kennwort generiert werden soll, klicken Sie rechts neben dem Feld auf den Würfel. 
   
 ![Kennwort für etcd aktualisieren](./images/etcd-update-password.png "Automatischer Kennwortgenerator")
 
-Klicken Sie auf **Kennwort aktualisieren**. Sie werden aufgefordert, die Änderung zu bestätigen. Klicken Sie im Dialog auf **Kennwort aktualisieren**, um das neue Kennwort zu bestätigen, oder brechen Sie die Änderung ab. In der Anzeige _Bereitstellungsdetails_ wird der Verarbeitungsfortschritt des Jobs angezeigt.
+Klicken Sie auf **Kennwort aktualisieren**. Sie werden aufgefordert, die Änderung zu bestätigen. Klicken Sie im Dialog auf **Kennwort aktualisieren**, um das neue Kennwort zu bestätigen, oder brechen Sie die Änderung ab. Im Teilfenster _Bereitstellungsdetails_ wird der Verarbeitungsfortschritt des Jobs angezeigt.
 
 **Hinweis:** Durch Ändern des Kennworts werden die Berechtigungsnachweise geändert, mit denen Sie und Ihre Services eine Verbindung herstellen, und die Verbindungszeichenfolge Ihres Service wird ungültig. Dies kann auch zu Ausfallzeiten führen.
 
 ### Verbundene Anwendungen aktualisieren
-Die Änderung des Kennworts bewirkt, dass die vorhandene Verbindungszeichenfolge ungültig wird und eine neue generiert wird. Dies führt zu einer Serviceunterbrechung, bis die verbundenen Anwendungen mit der neuen Verbindungszeichenfolge aktualisiert werden. Dazu müssen Sie Ihren Anwendungen die neue Verbindungszeichenfolge zur Verfügung stellen.
+Die Änderung des Kennworts bewirkt, dass die vorhandene Verbindungszeichenfolge ungültig und eine neue generiert wird. Dies kann zu einer Serviceunterbrechung führen, bis die verbundenen Anwendungen mit der neuen Verbindungszeichenfolge aktualisiert worden sind.
 
-Weitere Informationen zum Verbinden Ihrer Anwendungen finden Sie in den Abschnitten [{{site.data.keyword.cloud}}-Anwendung verbinden](./connecting-bluemix-app.html)
-und [Externe Anwendung verbinden](./connecting-external.html).
+Weitere Informationen zum Herstellen von Verbindungen für Ihre Anwendungen finden Sie in [{{site.data.keyword.cloud}}-Anwendung verbinden](./connecting-bluemix-app.html) und [Externe Anwendung verbinden](./connecting-external.html).
 
 
 ## Whitelists verwenden
@@ -64,17 +62,17 @@ Wenn Sie den Zugriff auf Ihre Datenbank beschränken wollen, können Sie bestimm
 ### IP-Adressen
 Das Feld *IP* kann eine einzelne vollständige IPv4- oder IPv6-Adresse mit oder ohne Netzmaske annehmen. Ohne Netzmaske müssen eingehende Verbindungen von genau dieser IP-Adresse kommen. 
 
-Beachten Sie Folgendes: Zwar lässt der IP-Eintrag IPv6 zu, doch ist derzeit keine Compose-Bereitstellung für den IPv6-Netzbetrieb verfügbar, sodass keine Filterung dieser Adressen möglich ist.
+**Hinweis:** Für den IP-Eintrag ist zwar IPv6 zulässig, doch derzeit sind keine Compose-Bereitstellungen für den IPv6-Netzbetrieb verfügbar, sodass keine Filterung dieser Adressen möglich ist.
 
 ### Netzmasken
-Verwenden Sie eine Netzmaske, um eine Verbindung von einem angegebenen IP-Adressbereich zuzulassen. Bei Verwendung einer Netzmaske muss die IP-Adresse vollständig angegeben werden. Es muss also beispielsweise 192.168.1.0/24 statt 192.168.1/24 eingegeben werden.
+Verwenden Sie eine Netzmaske, um eine Verbindung von einem angegebenen IP-Adressbereich zuzulassen. Bei Verwendung einer Netzmaske muss die IP-Adresse vollständig angegeben werden. Es muss also beispielsweise `192.168.1.0/24` statt `192.168.1/24` eingegeben werden.
 
 ### Beschreibung
-Die *Beschreibung* kann ein beliebiger für den Benutzer hilfreicher Text zum Identifizieren des Eintrags in der Whitelist sein, beispielsweise ein Kundenname, eine Projekt-ID oder eine Personalnummer. Das Beschreibungsfeld ist erforderlich.
+Die *Beschreibung* kann ein beliebiger Text zur Kenntlichmachung des Eintrags in der Whitelist sein, beispielsweise ein Kundenname, eine Projekt-ID oder eine Personalnummer. Das Beschreibungsfeld ist erforderlich.
 
 ### Compose-Services
 Einträge in die Whitelist werden automatisch zu den Compose-Servern hinzugefügt, damit sie eine Verbindung herstellen können.
 
-### Entfernen
-Klicken Sie, wenn Sie eine IP-Adresse oder Netzmaske aus der Whitelist entfernen wollen, auf den neben ihr angezeigten Eintrag *Entfernen*.
+### In der Whitelist aufgeführte IP-Adressen entfernen
+Wenn Sie eine IP-Adresse oder Netzmaske aus der Whitelist entfernen wollen, klicken in der entsprechenden Zeile auf *IP entfernen*.
 Wenn alle Einträge in der Whitelist entfernt werden, wird die Whitelist inaktiviert und die TCP-Zugriffsportale akzeptieren alle IP-Adressen.

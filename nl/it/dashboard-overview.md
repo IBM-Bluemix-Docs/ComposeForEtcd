@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2017,2018
-lastupdated: "2017-11-15"
+lastupdated: "2018-05-07"
 ---
 
 {:new_window: target="_blank"}
@@ -13,7 +13,7 @@ lastupdated: "2017-11-15"
 
 # Panoramica sul servizio
 
-La pagina _Overview_ ti mostra le informazioni sul tuo database {{site.data.keyword.cloud}} Compose. La panoramica include le informazioni di identificazione essenziali e l'utilizzo della risorsa corrente. Troverai inoltre una sezione per le stringhe di connessione che puoi utilizzare con gli strumenti o utilizzare gli strumenti per il collegamento al tuo database.
+La pagina _Overview_ ti mostra le informazioni sul tuo database {{site.data.keyword.cloud}} Compose, comprese le informazioni di identificazione essenziali e l'attuale utilizzo delle risorse. Include anche delle stringhe di connessione che puoi utilizzare con gli strumenti per stabilire una connessione al tuo database.
 
 ## Deployment Details
 
@@ -25,7 +25,7 @@ Il pannello _Deployment Details_ mostra i dettagli del tuo servizio.
 
 Il tipo di database offerto dal servizio e la versione che il servizio utilizza. Se è disponibile una versione più recente del database, viene visualizzata una notifica, insieme a un link alla sezione [Aggiorna versione](/docs/services/ComposeForEtcd/dashboard-settings.html#upgrade-version) del tuo dashboard del servizio.
 
-### Name
+### ID
 
 Un identificativo interno per il servizio.
 
@@ -62,7 +62,7 @@ Puoi gestire il tuo servizio {{site.data.keyword.composeForEtcd}} tramite l'API 
 
 ### Endpoint fondazione
 
-L'endpoint fondazione è formato dalla regione in cui risiede il servizio e dall'ID dell'istanza del servizio. Sarà all'inizio di ogni endpoint.
+L'endpoint fondazione è formato dalla regione in cui risiede il servizio e dall'ID dell'istanza del servizio. Può essere trovato all'inizio di ogni endpoint.
 
 ### ID distribuzione
 

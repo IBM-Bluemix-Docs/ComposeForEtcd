@@ -14,9 +14,9 @@ lastupdated: "2017-06-16"
 # 外部アプリケーションの接続
 {: #connecting-external-app}
 
-# SSL と Compose etcd
+## SSL および Compose for Etcd
 
-{{site.data.keyword.composeForEtcd_full}} では、SSL 接続に自己署名証明書を使用して、より厳密な証明書固定が可能です。 これはまさに、etcd 資料の中の一般的な例に比べて、アプリケーションに渡す必要があるパラメーターにいくつかの違いがあるということになります。
+{{site.data.keyword.composeForEtcd_full}} では、SSL 接続に自己署名証明書を使用して、より厳密な証明書固定が可能です。 つまり、アプリケーションに渡す必要があるパラメーターと etcd 資料の中の一般的な例には違いがあります。
 
 ## SSL 証明書の取得
 
@@ -24,19 +24,19 @@ SSL 接続を行うためには、サーバーの SSL 証明書を取得する�
 
 証明書はテキスト・ブロックとして示されます。 テキストのブロック全体をコピーし、それをローカル・ファイルに貼り付けて、SSL 証明書ファイルを作成します。
 
-**注:** 以下の例では、そのファイルの名前を `servercert.crt` としています。
+**注:** 以下の例では、証明書が含まれるファイルの名前を `servercert.crt` としています。
 
 ## コマンド・ライン・ユーティリティー - curl と etcdctl
 
-コマンド・ライン・ユーティリティーを使用するには、その証明書のパスとファイル名をユーティリティーに渡します。 
-`curl` から始めましょう。このユーティリティーは etcd と対話するための最もシンプルな手段です。 オプションとパラメーター `-cacert certificate-filename` をコマンド・ラインに追加するだけで、証明書が使用されるようになります。
+コマンド・ライン・ユーティリティーを使用するには、証明書のパスとファイル名をユーティリティーに渡します。 
+`curl` を使用する場合は、オプションとパラメーター `-cacert certificate-filename` をコマンド・ラインに追加して、使用する証明書を取得します。
 
 ```shell
 curl -L https://user:pass@hostname:port/v2/keys/ --cacert ./servercert.crt
 
 ```
 
-`etcdctl` コマンドは、システムを制御するためのより etcd 中心の手段となりますが、`--ca-file certificate-filename` 内のオプションとパラメーターは似ているようで異なります。この場合は、次のようなコマンドになります。
+`etcdctl` コマンドを使用すると、etcd での特徴をより良く活用してシステムを制御できるようになります。 この場合は、`--ca-file certificate-filename` 内のオプションとパラメーターは似ているようで異なります。
 
 ```shell
 etcdctl --ca-file servercert.crt --no-sync --peers https://host1:port1,https://host2:post2 -u user:pass ls /
@@ -47,9 +47,9 @@ etcdctl --ca-file servercert.crt --no-sync --peers https://host1:port1,https://h
 
 ## アプリケーション - Go
 
-コードを書く場合、証明書情報をどのように渡すかは、使用する言語とドライバーによって決まります。 
+コードを書く場合、証明書情報をどのように渡すかは、使用するプログラミング言語とドライバーによって決まります。 
 
-etcd Go ドライバーを使用する Go のコードを抜き出したものを次に示します。 この例では、SSL 証明書と [Go 用 CoreOS etcd クライアント](https://godoc.org/github.com/coreos/etcd/client)を扱えるように、以下のように `crypto/tls` パッケージと `crypto/x509` パッケージをインポートします。
+etcd Go ドライバーを使用する Go のコードを抜き出したものを次に示します。 この例では、SSL 証明書と [Go 用 CoreOS etcd クライアント](https://godoc.org/github.com/coreos/etcd/client)を扱えるように、`crypto/tls` パッケージと `crypto/x509` パッケージをインポートします。
 
 ```go
 import (
@@ -65,7 +65,8 @@ import (
 
 次のコード・ブロックが実際の接続を行います。 コードは証明書ファイルを読み取って証明書プールに追加します。 次にそれをルート CA 証明書として `tls.Config` 構造体に追加し、HTTP トランスポートを作成した後、そのトランスポートを使用して etcd クライアント接続を開始します。
 
-`peerlist`、`cafile`、`username`、`password` は、コマンド・ラインから渡されるストリングであることに注意してください。
+**注:** このコード例では、`peerlist`、`cafile`、`username`、`password` がコマンド・ラインから渡されるストリングです。
+
 
 ```go
   peers := strings.Split(*peerlist, ",")

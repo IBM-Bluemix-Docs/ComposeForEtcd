@@ -16,10 +16,9 @@ lastupdated: "2017-10-23"
 
 Esses recursos permitem que você adapte seu serviço {{site.data.keyword.composeForEtcd_full}} para adequar melhor às suas necessidades e requisitos.
 
-
 ## Versão de upgrade
 
-Se houver uma nova versão do banco de dados disponível, um menu suspenso aparecerá, permitindo que você selecione para qual versão gostaria de fazer upgrade. Caso contrário, seu serviço está na versão mais recente disponível e o painel exibe as informações da versão atual.
+ Se o serviço já estiver na versão mais recente disponível, o painel exibirá as informações da versão atual. Se uma nova versão do banco de dados estiver disponível, um menu suspenso aparecerá, permitindo que você selecione uma versão para a qual fazer upgrade.
 
 ![The Version panel](./images/etcd-version-show.png "The Version panel")
 
@@ -39,20 +38,20 @@ Quando o ajuste de escala for concluído, a área de janela _Detalhes da impleme
 
 ## Mudar senha
 
-Você pode achar necessário mudar a senha de seu serviço. É possível fazer isso usando _Atualizar senha_. 
+Você pode achar necessário mudar a senha de seu serviço. É possível fazer isso no painel _Mudar senha_. 
 
-Uma nova senha gerada aleatoriamente aparecerá ou será possível digitar sua própria senha no campo. Para gerar novamente outra senha, clique no cubo à direita do campo. 
+É possível usar a senha gerada aleatoriamente criada para você ou digitar sua própria senha no campo. Para gerar novamente uma nova senha aleatória, clique no dado à direita do campo. 
   
 ![Updating the etcd password](./images/etcd-update-password.png "The automatic password generator")
 
-Clique em **Atualizar senha**. Será solicitado que você confirme a mudança. Clique em **Atualizar senha** no diálogo para confirmar a nova senha ou cancele para cancelar a mudança. A área de janela _Detalhes da implementação_ mostrará o progresso da tarefa em execução.
+Clique em **Atualizar senha**. Será solicitado que você confirme a mudança. Clique em **Atualizar senha** no diálogo para confirmar a nova senha ou cancele para cancelar a mudança. A área de janela _Detalhes da implementação_ mostra o progresso da tarefa em execução.
 
 **Nota:** a troca da senha muda as credenciais que você e os seus serviços usam para se conectar e invalida a sequência de conexões do seu serviço. Ela também pode resultar em tempo de inatividade.
 
 ### Atualizando aplicativos conectados
-Mudar a senha invalidará a sequência de conexões existente e gerar uma nova. Isso causará uma interrupção de serviço até que aplicativos conectados sejam atualizados com a nova sequência de conexões. Você precisará fazer isso fornecendo a nova sequência de conexões para seus aplicativos.
+Mudar a senha invalida a sequência de conexões existente e gera uma nova. Isso pode causar uma interrupção no serviço até que os aplicativos conectados sejam atualizados com a nova sequência de conexões.
 
-Mais informações sobre como conectar seus aplicativos estão em [Conectando um aplicativo {{site.data.keyword.cloud}}](./connecting-bluemix-app.html).
+Para obter mais informações sobre como conectar seus aplicativos, consulte [Conectando um aplicativo do {{site.data.keyword.cloud}}](./connecting-bluemix-app.html).
 e [Conectando um aplicativo externo](./connecting-external.html).
 
 
@@ -65,17 +64,17 @@ Se você deseja restringir o acesso a seus bancos de dados, é possível incluir
 ### Endereços IP
 O campo *IP* pode assumir um único endereço IPv4 ou endereço IPv6 completo com ou sem uma máscara de rede. Sem uma máscara de rede, as conexões recebidas devem vir exatamente desse endereço IP. 
 
-Observe que embora a entrada de IP permita IPv6, nenhuma implementação do Compose está atualmente disponível na rede IPv6 e, portanto, esses endereços não podem ser filtrados.
+**Nota:** embora a entrada de IP permita IPv6, nenhuma implementação do Compose está disponível atualmente para a rede IPv6 e, portanto, esses endereços não podem ser filtrados.
 
 ### Máscaras de rede
-Para permitir uma conexão de um intervalo especificado de endereços IP, use uma máscara de rede. O endereço IP deve ser totalmente especificado ao usar uma máscara de rede. Isso significa inserir, por exemplo, 192.168.1.0/24 em vez de 192.168.1/24.
+Para permitir uma conexão de um intervalo especificado de endereços IP, use uma máscara de rede. O endereço IP deve ser totalmente especificado ao usar uma máscara de rede. Isso significa inserir, por exemplo, `192.168.1.0/24` em vez de `192.168.1/24`.
 
 ### Descrição
-A *Descrição* pode ser qualquer texto significativo do usuário para identificar a entrada da lista de desbloqueio - um nome de cliente, identificador de projeto ou número de matrícula, por exemplo. O campo de descrição é obrigatório.
+A *Descrição* pode ser qualquer texto para identificar a entrada da lista de desbloqueio - um nome de cliente, um identificador de projeto ou um número de funcionário, por exemplo. O campo de descrição é obrigatório.
 
 ### Serviços do Compose
 As entradas da lista de desbloqueio são incluídas automaticamente nos servidores do Compose para permitir que eles se conectem.
 
-### Remoção
-Para remover um endereço IP ou máscara de rede da Lista de desbloqueio, clique na entrada *Remover* exibida próxima ele.
+### Removendo Endereços IP com Whitelisted
+Para remover um endereço IP ou uma máscara de rede da Lista de desbloqueio, clique em *Remover IP* na linha correspondente.
 Quando todas as entradas na lista de desbloqueio forem removidas, a lista de desbloqueio será desativada e todos os endereços IP serão aceitos pelos portais de acesso TCP.

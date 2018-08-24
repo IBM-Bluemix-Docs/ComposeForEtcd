@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="compose-for-etcd" audience="service" href="/docs/services/ComposeForEtcd/index.html"}
+{: .toc subcollection="compose-for-etcd" audience="service" arm="3663052" href="/docs/services/ComposeForEtcd/index.html"}
 Compose For Etcd
 
 	{: .navgroup id="learn"}
@@ -22,3 +22,11 @@ Compose For Etcd
 		connecting-bluemix-app.md
 		connecting-external.md
 	{: .navgroup-end}
+
+	{: .navgroup id="reference"}
+	reference-versions.md
+	reference-architecture.md
+	reference-connections.md
+	reference-other-offerings.md
+	{: .navgroup-end}
+

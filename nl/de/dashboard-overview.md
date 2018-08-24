@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2017,2018
-lastupdated: "2017-11-15"
+lastupdated: "2018-05-07"
 ---
 
 {:new_window: target="_blank"}
@@ -13,7 +13,7 @@ lastupdated: "2017-11-15"
 
 # Übersicht über den Service
 
-Auf der Seite _Übersicht_ finden Sie Informationen zu Ihrer {{site.data.keyword.cloud}} Compose-Datenbank. Die Übersicht enthält die zentralen Identifikationsinformationen sowie die aktuelle Ressourcennutzung. Außerdem finden Sie einen Abschnitt für Verbindungszeichenfolgen, die Sie mit Tools verwenden können, und Angaben zum Herstellen von Verbindungen zu Ihrer Datenbank mithilfe von Tools.
+Auf der Seite _Übersicht_ finden Sie Informationen zu Ihrer {{site.data.keyword.cloud}} Compose-Datenbank. Sie enthält die zentralen Identifikationsinformationen sowie die aktuelle Ressourcennutzung. Außerdem umfasst sie Verbindungszeichenfolgen, die Sie mit Tools verwenden können, um eine Verbindung zu Ihrer Datenbank herzustellen.
 
 ## Bereitstellungsdetails
 
@@ -25,7 +25,7 @@ Die Anzeige _Bereitstellungsdetails_ enthält Details zu Ihrem Service.
 
 Der Datenbanktyp, der vom Service angeboten wird, und die Datenbankversion, die Ihr Service verwendet. Wenn eine neuere Datenbankversion verfügbar ist, wird eine Benachrichtigung zusammen mit einem Link zum Abschnitt [Upgradeversion](/docs/services/ComposeForEtcd/dashboard-settings.html#upgrade-version) Ihres Service-Dashboards angezeigt.
 
-### Name
+### ID
 
 Eine interne ID für den Service.
 
@@ -62,7 +62,7 @@ Sie können Ihren {{site.data.keyword.composeForEtcd}}-Service über die {{site.
 
 ### Basisendpunkt
 
-Der Basisendpunkt setzt sich aus der Region, in der sich der Service befindet, und der Serviceinstanz-ID zusammen. Er steht am Anfang von jedem Endpunkt.
+Der Basisendpunkt setzt sich aus der Region, in der sich der Service befindet, und der Serviceinstanz-ID zusammen. Er befindet sich am Anfang eines jeden Endpunkts.
 
 ### Bereitstellungs-ID
 
