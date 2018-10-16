@@ -16,7 +16,7 @@ lastupdated: "2018-06-07"
 
 Deployable Versions | Preferred Version
 ----------|-----------
-3.2.18. 3.3.3 | 3.2.18, 3.3.3
+3.2.18, 3.3.3 | 3.2.18, 3.3.3
 {: caption="Table 1. {{site.data.keyword.composeForEtcd}} versions" caption-side="top"}
 
 You can find the list of available versions on the {{site.data.keyword.composeForEtcd}} [catalog page](https://console.{DomainName}/catalog/services/compose-for-etcd).
