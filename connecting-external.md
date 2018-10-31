@@ -14,94 +14,35 @@ lastupdated: "2017-06-16"
 # Connecting an external application
 {: #connecting-external-app}
 
-## SSL and Compose for Etcd
+You can find the information that you need to connect to {{site.data.keyword.composeForEtcd_full}} on the *Overview* page of your deployment, in the _Connection Strings_ section. {site.data.keyword.composeForEtcd}} deployments accept TLS/SSL secured connections that are backed with a Let's Encrypt certificate.
 
-{{site.data.keyword.composeForEtcd_full}} uses self-signed certificates for SSL connections to allow for more precise certificate pinning. This means that the parameters you need to pass to applications are different from common examples in the etcd documentation.
+## Connecting with etcdctl
 
-## Obtaining the SSL Certificate
+`etcdctl` is the command-line client for etcd and can be used to manage your etcd. It is installed with a local installation of the etcd package.
 
-To make an SSL connection, you need to obtain the SSL Certificate for the server, which you can find ion the *Overview* page of your {{site.data.keyword.composeForEtcd}} service.
-
-The certificate is shown as a text block. Copy the whole block of text and paste it to a local file to create your SSL certificate file.
-
-**Note:** In the following examples, the file containing the certificate is called `servercert.crt`.
-
-## Command line utilities - curl and etcdctl
-
-To use command line utilities, pass the path and file name of the certificate to the utility. 
-When you are using `curl`, add the option and parameter `-cacert certificate-filename` to your command line to get the certificate used:
+The _Connection Strings_ panel has a _Command Line_ tab with a formatted `etcdctl` command to connect to your deployment. 
 
 ```shell
-curl -L https://user:pass@hostname:port/v2/keys/ --cacert ./servercert.crt
+ETCDCTL_API=3 etcdctl --endpoints=https://portal-ssl8-39.bmix-dal-yp-29efe85a-ebc4-45c9-96b0-2f7dc246478d.1556490063.composedb.com:62697,https://portal-ssl4-40.bmix-dal-yp-29efe85a-ebc4-45c9-96b0-2f7dc246478d.1556490063.composedb.com:62697 --user=root:<password> member list -w table
+```
+You have to specify the version of the API to use by setting the environment with `ETCDCTL_API=3`. The `--endpoints` parameter accepts the addresses of the two HAProxy portals, and the `--user` parameter is the root user and its password. The `member list -w table` is the command to display all the data members of your etcd cluster in a table format.
 
+An `etcdctl` command reference is available on the [GitHub page](https://github.com/etcd-io/etcd/tree/master/etcdctl).
+
+## Connecting with a language's driver
+
+etcd drivers are often able to make a connection to your deployment when given the URI-formatted connection string found in the _HTTPS_ tab of the _Connection Stings_ panel. For example, 
+```
+https://root:<password>@portal-ssl8-39.bmix-dal-yp-29efe85a-ebc4-45c9-96b0-2f7dc246478d.1556490063.composedb.com:62697
 ```
 
-The `etcdctl` command provides a more etcd-centric way to control the system. It has a similar, but different, option and parameter in `--ca-file certificate-filename`.
+The table covers a few of the etcd drivers in various languages.
 
-```shell
-etcdctl --ca-file servercert.crt --no-sync --peers https://host1:port1,https://host2:post2 -u user:pass ls /
+Language|Driver|Documentation
+----------|-----------
+Node|`etcd3`|[Link](https://mixer.github.io/etcd3/classes/index_.etcd3.html)
+Java|`jetcd`|[Link](https://github.com/etcd-io/jetcd)
+Java|`etcd-java`|[Link](https://github.com/IBM/etcd-java)
+Go|`etcd/client`|[Link](https://github.com/etcd-io/etcd/tree/master/client)
+{: caption="Table 2. Common etcd drivers" caption-side="top"}
 
-```
-
-The certificate parameter can also be set with the value of an environment variable `ETCDCTL_CA_FILE`. Remember to use an absolute path and file name to point to the certificate when you set the variable.
-
-## Applications - Go
-
-If you are writing code, then how you pass the certificate information depends on your programming language and driver. 
-
-Here's an extract of code for Go that uses the etcd Go driver. This example imports the `crypto/tls` and `crypto/x509` packages to handle the SSL certificate and the [CoreOS etcd client for Go](https://godoc.org/github.com/coreos/etcd/client).
-
-```go
-import (
-	"crypto/tls"
-	"crypto/x509"
-	"io/ioutil"
-	"net/http"
-...
-	"github.com/coreos/etcd/client"
-	...
-)
-```
-
-The next block of code performs the actual connection. The code reads the certificate file, and adds it to a certificate pool. It then adds that to a `tls.Config` structure as the root CA certificate, creates an HTTP transport and uses that transport to start the etcd client connection.
-
-**Note:** In the code example, `peerlist`, `cafile`, `username`, and `password` are strings that are passed in from the command line.
-
-
-```go
-  peers := strings.Split(*peerlist, ",")
-
-	// Read the certificate into a file
-	caCert, err := ioutil.ReadFile(*cafile)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	// Create a certificate pool
-	caCertPool := x509.NewCertPool()
-	// and add the freshly read certificate to the new pool
-	caCertPool.AppendCertsFromPEM(caCert)
-
-	// Create a TLS configuration structure
-	// with the certificate pool as it's a list of certificate authorities
-	tlsConfig := &tls.Config{
-		RootCAs: caCertPool,
-	}
-
-	// Then create a HTTP transport with that configuration
-	transport := &http.Transport{TLSClientConfig: tlsConfig}
-
-	// When we create the etcd client configuration, use that transport
-	cfg := client.Config{
-		Endpoints:               peers,
-		Transport:               transport,
-		HeaderTimeoutPerRequest: time.Minute,
-		Username:                *username,
-		Password:                *password,
-	}
-
-	// And create your client as normal. 
-	etcdclient, err := client.New(cfg)
-```
-
-A full example that uses this code is available in the [examplco3 repository](https://github.com/compose-ex/examplco3).
