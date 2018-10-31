@@ -14,7 +14,7 @@ lastupdated: "2017-06-16"
 # Connecting an external application
 {: #connecting-external-app}
 
-You can find the information that you need to connect to {{site.data.keyword.composeForEtcd_full}} on the *Overview* page of your deployment, in the _Connection Strings_ section. {site.data.keyword.composeForEtcd}} deployments accept TLS/SSL secured connections that are backed with a Let's Encrypt certificate.
+You can find the information that you need to connect to {{site.data.keyword.composeForEtcd_full}} on the *Overview* page of your deployment, in the _Connection Strings_ section. {{site.data.keyword.composeForEtcd}} deployments accept TLS/SSL secured connections that are backed with a Let's Encrypt certificate.
 
 ## Connecting with etcdctl
 
