@@ -26,6 +26,6 @@ For more information about other Compose services, see the [Compose Articles](ht
 
 Once you have a {{site.data.keyword.composeEnterprise}} cluster, selecting the {{site.data.keyword.composeForEtcd}} service with the Enterprise plan provisions the service onto your dedicated cluster. 
 
-For more information, see the [{{site.data.keyword.composeEnterprise}} catalog page](https://console.{DomainName}/catalog/services/compose-enterprise) and [documentation](https://console.{DomainName}/docs/services/ComposeEnterprise/index.html#about-compose-enterprise).
+For more information, see the [{{site.data.keyword.composeEnterprise}} catalog page](https://{DomainName}/catalog/services/compose-enterprise) and [documentation](https://{DomainName}/docs/services/ComposeEnterprise/index.html#about-compose-enterprise).
 
 

@@ -90,7 +90,7 @@ The new service instance is automatically given the name "etcd-restore-[timestam
 
 Use the following steps to restore a backup from a running etcd service to a new etcd service by using the {{site.data.keyword.cloud_notm}} CLI. 
 
-1. If you need to, [download and install the CLI](https://console.{DomainName}/docs/cli/index.html#overview). 
+1. If you need to, [download and install the CLI](https://{DomainName}/docs/cli/index.html#overview). 
 2. Find the backup that you want to restore from on the _Backups_ page on your service and copy the backup ID.
 
   **Or**  
