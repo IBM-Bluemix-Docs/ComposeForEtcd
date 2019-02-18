@@ -11,8 +11,8 @@ lastupdated: "2018-06-11"
 {:pre: .pre}
 {:tip: .tip}
 
-# Connection Configuration
-{: #connection-configuration}
+# Connection Architecture
+{: #connection-architecture}
 
 {{site.data.keyword.composeForEtcd_full}} database connections are managed by 2 HAProxy portals. Each portal has 64 MB of memory.
 

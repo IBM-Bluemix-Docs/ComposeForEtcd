@@ -13,6 +13,7 @@ lastupdated: "2017-10-23"
 {:tip: .tip}
 
 # Settings
+{: #dashboard-settings}
 
 These features allow you to adapt your {{site.data.keyword.composeForEtcd_full}} service to better suit your needs and requirements.
 
@@ -55,7 +56,7 @@ You might find it necessary to change the password of your service.
 
 Changing the password invalidates the existing connection string and generate a new one. This can cause a service interruption until connected applications are updated with the new connection string.
 
-For more information about connecting your applications see [Connecting an {{site.data.keyword.cloud}} Application](./connecting-bluemix-app.html), and [Connecting an external application](./connecting-external.html).
+For more information about connecting your applications see [Connecting an {{site.data.keyword.cloud}} Application](/docs/services/ComposeForEtcd?topic=compose-for-etcd-ibmcloud-cf-app), and [Connecting an external application](/docs/services/ComposeForEtcd?topic=compose-for-etcd-external-app).
 
 
 ## Using Whitelists
