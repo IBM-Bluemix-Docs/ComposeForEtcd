@@ -89,18 +89,18 @@ The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate wit
 {{site.data.keyword.cloud_notm}} uses a manifest file - `manifest.yml` to associate an application with a service. Follow these steps to create your manifest file.
 
 1. In an editor, open a new file and add the following:
-
   ```
   ---
   applications:
-  - name:    compose-etcd-helloworld-nodejs
-    host:    compose-etcd-helloworld-nodejs
+  - name: compose-etcd-helloworld-nodejs
+    routes:
+    - route: compose-etcd-helloworld-nodejs.us-south.cf.appdomain.cloud
     memory:  128M
     services:
-      - my-compose-for-etcd-service
-  ```
+      - example-compose-for-etcd
+```
 
-2. Change the `host` value to something unique. The host that you choose determines the subdomain of your application's URL:  `<host>.mybluemix.net`.
+2. Change the `route` value to something unique. The route that you choose determines the subdomain of your application's URL: `<route>.{region}.cf.appdomain.cloud`. Be sure the `{region}` matches where your application is deployed.
 3. Change the `name` value. The value that you choose is displayed in your {{site.data.keyword.cloud_notm}} dashboard.
 4. Update the `services` value to match the name of the service you created in [Create a {{site.data.keyword.composeForEtcd}} service instance](#create-service). 
   
@@ -127,7 +127,7 @@ ibmcloud cf push
 
 ## Step 9. Use the app
 
-When you go to `<host>.mybluemix.net/` you can see the contents of your {{site.data.keyword.composeForEtcd}} collection. As you add words and their definitions, they are added to the database and displayed. When you stop and restart the app, any words you added are displayed when you refresh the page.
+When you go to `<route>.{region}.cf.appdomain.cloud/` you can see the contents of your {{site.data.keyword.composeForEtcd}} collection. As you add words and their definitions, they are added to the database and displayed. When you stop and restart the app, any words you added are displayed when you refresh the page.
 
 ## Running the App Locally
 
