@@ -3,6 +3,10 @@
 copyright:
   years: 2016,2018
 lastupdated: "2017-09-21"
+
+
+subcollection: compose-for-etcd
+
 ---
 
 {:new_window: target="_blank"}
