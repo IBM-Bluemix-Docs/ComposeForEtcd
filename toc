@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="compose-for-etcd" audience="service" arm="3663052" href="/docs/services/ComposeForEtcd/index.html" path="services/ComposeForEtcd"}
+{: .toc subcollection="compose-for-etcd" audience="service" category="databases" arm="3663052" href="/docs/services/ComposeForEtcd/index.html" path="services/ComposeForEtcd"}
 Compose For etcd
 
 	{: .navgroup id="learn"}
