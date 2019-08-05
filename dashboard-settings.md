@@ -4,6 +4,8 @@ Copyright:
   years: 2017,2018
 lastupdated: "2017-10-23"
 
+keywords: etcd, compose
+
 subcollection: compose-for-etcd
 
 ---
