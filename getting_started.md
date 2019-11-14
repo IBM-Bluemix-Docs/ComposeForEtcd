@@ -32,7 +32,7 @@ You can create a {{site.data.keyword.composeForEtcd}} service from the [{{site.d
 
 Choose a service name, region, organization and space to provision the service in, and for the **Select a database version** field, choose _Latest Preferred Version_.
 
-Next, choose a pricing plan for your service. You can choose the *Standard* or *Enterprise* plans. With the *Enterprise* plan, you can provision your {{site.data.keyword.composeForEtcd}} instance into an available {{site.data.keyword.composeEnterprise}} cluster. {{site.data.keyword.composeEnterprise}} provides the security and isolation that is required by enterprise compliance and uses dedicated networking to ensure the performance of the deployed databases. See the [{{site.data.keyword.composeEnterprise}}](/docs/services/ComposeEnterprise/index.html) documentation for more details.
+Next, choose a pricing plan for your service. You can choose the *Standard* or *Enterprise* plans. With the *Enterprise* plan, you can provision your {{site.data.keyword.composeForEtcd}} instance into an available {{site.data.keyword.composeEnterprise}} cluster. {{site.data.keyword.composeEnterprise}} provides the security and isolation that is required by enterprise compliance and uses dedicated networking to ensure the performance of the deployed databases. See the [{{site.data.keyword.composeEnterprise}}](/docs/services/ComposeEnterprise?topic=compose-enterprise-about) documentation for more details.
 
 Click **Create** to provision your service. Provisioning can take a while to complete. You can check on the progress by going to the _Manage_ view for the service.
 
@@ -65,7 +65,7 @@ Use npm to install dependencies.
 
 ## Step 4. Download and install the {{site.data.keyword.cloud_notm}} CLI tool
 
-The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](https://{DomainName}/docs/cli/reference/bluemix_cli/download_cli.html).
+The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For more information, see [Getting Started with the {{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-getting-started).
 
 ## Step 5. Connect to {{site.data.keyword.cloud_notm}}
 
@@ -75,7 +75,7 @@ The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate wit
   ibmcloud login
   ```
 
-  If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign-on ID. See [Logging in with a federated ID](https://{DomainName}/docs/cli/login_federated_id.html#federated_id) to learn more.
+  If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign-on ID. See [the `ibmcloud login` docs](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_login) to learn more.
   {: tip}
 
 2. Make sure that you are targeting the correct {{site.data.keyword.cloud_notm}} org and space.
@@ -92,7 +92,7 @@ The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate wit
 {{site.data.keyword.cloud_notm}} uses a manifest file - `manifest.yml` to associate an application with a service. Follow these steps to create your manifest file.
 
 1. In an editor, open a new file and add the following:
-  ```
+```
   ---
   applications:
   - name: compose-etcd-helloworld-nodejs
@@ -168,18 +168,17 @@ npm start
 
 The app is now running at [http://localhost:8080](http://localhost:8080). You can add words and definitions to your {{site.data.keyword.composeForEtcd}} database. When you stop and restart the app, any words you added are displayed when you refresh the page.
 
-For information about the credentials you created for the application to connect to your service, see [Available Credentials](./connecting-bluemix-app.html#available-credentials).
-
-
 ## Next steps
 
 To understand more about how the [sample app](https://github.com/IBM-Cloud/compose-etcd-helloworld-nodejs) works, you can read the application's readme file, or the code comments in `server.js`, which give some information about the app's functions.
 
 To start exploring your {{site.data.keyword.composeForEtcd}} service, see the following topics about the service dashboard:
 
-- [Dashboard Overview](./dashboard-overview.html)
-- [Backups](./dashboard-backups.html)
-- [Settings](./dashboard-settings.html)
+- [Dashboard Overview](/docs/services/ComposeForEtcd?topic=compose-for-etcd-dashboard-overview)
+- [Backups](/docs/services/ComposeForEtcd?topic=compose-for-etcd-dashboard-backups)
+- [Settings](/docs/services/ComposeForEtcd?topic=compose-for-etcd-dashboard-settings)
+
+For more information about the credentials you created for the application to connect to your service, see a list of the available [credentials](/docs/services/ComposeForEtcd?topic=compose-for-etcd-ibmcloud-cf-app#credentials).
 
 
 
