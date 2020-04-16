@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2016,2018
-lastupdated: "2018-06-06"
+  years: 2016,2020
+lastupdated: "2020-04-15"
 
 keywords: etcd, compose
 
@@ -15,9 +15,13 @@ subcollection: compose-for-etcd
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{:important: .important}
 
 # Other Offerings 
 {: #other-offerings}
+
+{{site.data.keyword.composeForEtcd_full}} is no longer the latest service offering. The next generation is [{{site.data.keyword.databases-for-etcd_full}}](/docs/databases-for-etcd?topic=databases-for-etcd-getting-started).
+{: .important}
 
 {{site.data.keyword.composeForEtcd_full}} has been developed from the Compose platform for production-ready, autoscaling, highly available databases. In addition to the documentation available on {{site.data.keyword.cloud_notm}}, Compose documentation is available from [https://help.compose.com](https://help.compose.com/).
 
@@ -31,6 +35,6 @@ For more information about other Compose services, see the [Compose Articles](ht
 
 Once you have a {{site.data.keyword.composeEnterprise}} cluster, selecting the {{site.data.keyword.composeForEtcd}} service with the Enterprise plan provisions the service onto your dedicated cluster. 
 
-For more information, see the [{{site.data.keyword.composeEnterprise}} catalog page](https://{DomainName}/catalog/services/compose-enterprise) and [documentation](https://{DomainName}/docs/services/ComposeEnterprise/index.html#about-compose-enterprise).
+For more information, see the [{{site.data.keyword.composeEnterprise}} catalog page](https://{DomainName}/catalog/compose-enterprise) and [documentation](https://{DomainName}/docs/ComposeEnterprise/index.html#about-compose-enterprise).
 
 
