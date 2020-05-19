@@ -6,7 +6,7 @@ lastupdated: "2018-01-03"
 
 keywords: etcd, compose
 
-subcollection: compose-for-etcd
+subcollection: ComposeForEtcd
 
 ---
 

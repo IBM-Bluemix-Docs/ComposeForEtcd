@@ -4,7 +4,7 @@ copyright:
   years: 2016,2020
 lastupdated: "2020-04-15"
 
-subcollection: compose-for-etcd
+subcollection: ComposeForEtcd
 
 ---
 
@@ -179,11 +179,11 @@ To understand more about how the [sample app](https://github.com/IBM-Cloud/compo
 
 To start exploring your {{site.data.keyword.composeForEtcd}} service, see the following topics about the service dashboard:
 
-- [Dashboard Overview](/docs/ComposeForEtcd?topic=compose-for-etcd-dashboard-overview)
-- [Backups](/docs/ComposeForEtcd?topic=compose-for-etcd-dashboard-backups)
-- [Settings](/docs/ComposeForEtcd?topic=compose-for-etcd-dashboard-settings)
+- [Dashboard Overview](/docs/ComposeForEtcd?topic=ComposeForEtcd-dashboard-overview)
+- [Backups](/docs/ComposeForEtcd?topic=ComposeForEtcd-dashboard-backups)
+- [Settings](/docs/ComposeForEtcd?topic=ComposeForEtcd-dashboard-settings)
 
-For more information about the credentials you created for the application to connect to your service, see a list of the available [credentials](/docs/ComposeForEtcd?topic=compose-for-etcd-ibmcloud-cf-app#credentials).
+For more information about the credentials you created for the application to connect to your service, see a list of the available [credentials](/docs/ComposeForEtcd?topic=ComposeForEtcd-ibmcloud-cf-app#credentials).
 
 
 
